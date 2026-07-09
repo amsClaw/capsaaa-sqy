@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie photos — CAPSAAA SQY</title>
+  <meta name="description" content="Galerie photos des activités de CAPSAAA : natation, équitation, musculation, fitness, multisports, sorties et sensibilisations à Saint-Quentin-en-Yvelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="https://www.cap-saaa-sqy.fr/medias/site/favicon/logo-capsaaa-02.jpg">
+  <style>
+    /* Gallery tabs */
+    .gallery-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .gallery-tabs button {
+      padding: 10px 20px;
+      border: 2px solid var(--color-border);
+      background: var(--color-white);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: var(--font-main);
+      color: var(--color-text);
+      transition: all var(--transition);
+    }
+    .gallery-tabs button:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    .gallery-tabs button.active {
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-color: var(--color-primary);
+    }
+
+    .gallery-section {
+      display: none;
+    }
+    .gallery-section.active {
+      display: block;
+    }
+
+    .gallery-section h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .gallery-section h2 .photo-count {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--color-text-light);
+      background: var(--color-bg-alt);
+      padding: 2px 12px;
+      border-radius: 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: var(--color-bg-alt);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 12px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: var(--color-white);
+      font-weight: 500;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .gallery-item:hover .gallery-label {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-tabs { gap: 6px; }
+      .gallery-tabs button { padding: 8px 14px; font-size: 0.8rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="../index.html" class="navbar-brand">
+        <img src="https://www.cap-saaa-sqy.fr/medias/images/logo-capsaaa-copie.png" alt="CAPSAAA Logo" onerror="this.style.display='none'">
+        <span>CAPSAAA <span class="brand-sub">Saint-Quentin-en-Yvelines</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+        <li><a href="activites.html">Activités</a></li>
+        <li><a href="sensibilisations.html">Sensibilisations</a></li>
+        <li><a href="galerie.html" class="active">Galerie</a></li>
+        <li><a href="inscriptions.html">Inscriptions</a></li>
+        <li><a href="partenaires.html">Partenaires</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Galerie photos</h1>
+      <p>Les moments forts de CAPSAAA en images</p>
+    </div>
+  </div>
+
+  <section class="content-page">
+    <div class="container">
+
+      <!-- Tabs -->
+      <div class="gallery-tabs">
+        <button class="active" data-tab="natation">🏊 Natation</button>
+        <button data-tab="equitation">🐴 Équitation</button>
+        <button data-tab="musculation">💪 Musculation</button>
+        <button data-tab="multisports">🎯 Multi-Sports</button>
+        <button data-tab="sorties">🎉 Sorties</button>
+        <button data-tab="sensibilisation">♿ Sensibilisations</button>
+        <button data-tab="toutes">📸 Toutes</button>
+      </div>
+
+      <!-- ===== NATATION ===== -->
+      <div class="gallery-section active" id="tab-natation">
+        <h2>🏊 Natation <span class="photo-count">6 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">À la piscine Monquaut — Trappes</p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/atip2979.jpg" alt="Natation Piscine Trappes" loading="lazy"><span class="gallery-label">Natation Piscine Trappes</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/cbrh0506.jpg" alt="Anne en mode maître nageur" loading="lazy"><span class="gallery-label">Anne en mode maître nageur</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/qmfi8712.jpg" alt="Anne, Christian, Corentin" loading="lazy"><span class="gallery-label">Anne, Christian, Corentin</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/photo-2023-06-26-23-16-58.jpg" alt="Sous le soleil" loading="lazy"><span class="gallery-label">Sous le soleil</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/photo-2023-06-26-23-16-59.jpg" alt="Le soleil est présent" loading="lazy"><span class="gallery-label">Le soleil est présent</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/photo-2023-06-26-23-16-60.jpg" alt="Sur l eau" loading="lazy"><span class="gallery-label">Sur l'eau</span></div>
+        </div>
+      </div>
+
+      <!-- ===== ÉQUITATION ===== -->
+      <div class="gallery-section" id="tab-equitation">
+        <h2>🐴 Équitation adaptée <span class="photo-count">8 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">Au club SQY Équitation — Île aux Loisirs</p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pveh1252.jpg" alt="Anne et Roxana" loading="lazy"><span class="gallery-label">Anne et Roxana</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/imzd6900.jpg" alt="Anne cavalière heureuse" loading="lazy"><span class="gallery-label">Anne cavalière heureuse</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/diego-sur-plume.jpg" alt="Diego sur plume" loading="lazy"><span class="gallery-label">Diego sur plume</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anis.jpg" alt="Anis" loading="lazy"><span class="gallery-label">Anis</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anne-et-guillaume.jpg" alt="Anne et Guillaume" loading="lazy"><span class="gallery-label">Anne et Guillaume</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anne-guillaume-joelle.jpg" alt="Anne, Guillaume, Joëlle" loading="lazy"><span class="gallery-label">Anne, Guillaume, Joëlle</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/dijbril.jpg" alt="Dijbril" loading="lazy"><span class="gallery-label">Dijbril</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/equitation.jpg" alt="Équitation" loading="lazy"><span class="gallery-label">Équitation</span></div>
+        </div>
+      </div>
+
+      <!-- ===== MUSCULATION ===== -->
+      <div class="gallery-section" id="tab-musculation">
+        <h2>💪 Musculation <span class="photo-count">9 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">Au gymnase Aviation — Guyancourt</p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/les-bras.jpg" alt="Les bras" loading="lazy"><span class="gallery-label">Les bras</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/abdoss1.jpg" alt="Abdos" loading="lazy"><span class="gallery-label">Abdos</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anne-et-fessal.jpg" alt="Anne et Fayçal" loading="lazy"><span class="gallery-label">Anne et Fayçal</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/etirements.jpg" alt="Étirements" loading="lazy"><span class="gallery-label">Étirements</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/nicole.jpg" alt="Nicole" loading="lazy"><span class="gallery-label">Nicole</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pere-et-fils1.jpg" alt="Père et fils" loading="lazy"><span class="gallery-label">Père et fils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/qbia3436.jpg" alt="Vincent" loading="lazy"><span class="gallery-label">Vincent</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/uxio7452.jpg" alt="Vincent et François font la course" loading="lazy"><span class="gallery-label">Vincent et François font la course</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/exmf9076.jpg" alt="Encore plus fort" loading="lazy"><span class="gallery-label">Encore plus fort</span></div>
+        </div>
+      </div>
+
+      <!-- ===== MULTI-SPORTS ===== -->
+      <div class="gallery-section" id="tab-multisports">
+        <h2>🎯 Multi-Sports <span class="photo-count">8 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">Au gymnase Aviation — Guyancourt</p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/nkfu4691.jpg" alt="Multi Sports 2024" loading="lazy"><span class="gallery-label">Multi Sports 2024</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/sebastien-et-son-papa-1.jpg" alt="Sébastien et son papa" loading="lazy"><span class="gallery-label">Sébastien et son papa</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/mariette-alexandre-dominique-2.jpg" alt="Mariette, Alexandre et Dominique" loading="lazy"><span class="gallery-label">Mariette, Alexandre, Dominique</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/corentin-et-son-papa.jpg" alt="Corentin et son papa" loading="lazy"><span class="gallery-label">Corentin et son papa</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/mariette-alexandre-dominique.jpg" alt="Mariette Alexandre et Dominique" loading="lazy"><span class="gallery-label">Mariette, Alexandre, Dominique</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/on-se-prepare-a-jouer.jpg" alt="On se prépare à jouer" loading="lazy"><span class="gallery-label">On se prépare à jouer</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pyeb7201.jpg" alt="Jeu d'adresse" loading="lazy"><span class="gallery-label">Jeu d'adresse</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/qfws9546.jpg" alt="Concentration" loading="lazy"><span class="gallery-label">Concentration</span></div>
+        </div>
+      </div>
+
+      <!-- ===== SORTIES ===== -->
+      <div class="gallery-section" id="tab-sorties">
+        <h2>🎉 Sorties & Événements <span class="photo-count">3 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">Moments de partage tout au long de l'année</p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pique-nique-base-de-loisirs-saint-quentin.jpg" alt="Pique-nique base de loisirs" loading="lazy"><span class="gallery-label">Pique-nique base de loisirs</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/c5d7a270-8269-4469-977d-5ab9cf280514.jpeg" alt="Repas Musculation et Multisports" loading="lazy"><span class="gallery-label">Repas Musculation et Multisports</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/a215a3c3-622c-4a83-94ab-5df7e086e962.jpeg" alt="Repas Musculation et Multisports" loading="lazy"><span class="gallery-label">Repas Musculation et Multisports</span></div>
+        </div>
+      </div>
+
+      <!-- ===== SENSIBILISATIONS ===== -->
+      <div class="gallery-section" id="tab-sensibilisation">
+        <h2>♿ Les sensibilisations <span class="photo-count">14 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">Ateliers dans les écoles, centres de loisirs et collectivités</p>
+
+        <h3 style="margin-top:30px">Sensibilisations historiques</h3>
+        <div class="gallery-grid" style="margin-bottom:30px">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/hexg8906-1.jpg" alt="Parcours fauteuils" loading="lazy"><span class="gallery-label">Parcours fauteuils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/apci4726-1.jpg" alt="Parcours" loading="lazy"><span class="gallery-label">Parcours</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/iwjy3417-1.jpg" alt="Basket Guyancourt" loading="lazy"><span class="gallery-label">Basket Guyancourt</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/kcet5662.jpg" alt="Préfecture" loading="lazy"><span class="gallery-label">Préfecture</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/nrht4766.jpg" alt="Course Fauteuils" loading="lazy"><span class="gallery-label">Course Fauteuils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/swkx6891.jpg" alt="Guyancourt" loading="lazy"><span class="gallery-label">Guyancourt</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/tvfd9684.jpg" alt="Atelier fauteuil" loading="lazy"><span class="gallery-label">Atelier fauteuil</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/ulpz7456.jpg" alt="Atelier" loading="lazy"><span class="gallery-label">Atelier</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/uudl3422.jpg" alt="Atelier" loading="lazy"><span class="gallery-label">Atelier</span></div>
+        </div>
+
+        <h3>Actions de sensibilisations 2024/2025</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/bgns0799.jpg" alt="Parcours Fauteuils" loading="lazy"><span class="gallery-label">Parcours Fauteuils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/fffp0382.jpg" alt="Les participants Écoles de Guyancourt" loading="lazy"><span class="gallery-label">Participants Écoles de Guyancourt</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/img-5562.jpg" alt="Torball" loading="lazy"><span class="gallery-label">Torball</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/img-5563.jpg" alt="Torball" loading="lazy"><span class="gallery-label">Torball</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/img-5628.jpg" alt="Torball" loading="lazy"><span class="gallery-label">Torball</span></div>
+        </div>
+      </div>
+
+      <!-- ===== TOUTES ===== -->
+      <div class="gallery-section" id="tab-toutes">
+        <h2>📸 Toutes les photos <span class="photo-count">48 photos</span></h2>
+        <p style="color:var(--color-text-light);margin-bottom:16px">L'intégralité des photos par ordre d'album</p>
+        <div class="gallery-grid">
+          <!-- Natation -->
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/atip2979.jpg" alt="Natation Piscine Trappes" loading="lazy"><span class="gallery-label">🏊 Natation — Trappes</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/cbrh0506.jpg" alt="Anne en mode maître nageur" loading="lazy"><span class="gallery-label">🏊 Anne en mode maître nageur</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/qmfi8712.jpg" alt="Anne, Christian, Corentin" loading="lazy"><span class="gallery-label">🏊 Anne, Christian, Corentin</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/photo-2023-06-26-23-16-58.jpg" alt="Sous le soleil" loading="lazy"><span class="gallery-label">🏊 Sous le soleil</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/photo-2023-06-26-23-16-59.jpg" alt="Le soleil est présent" loading="lazy"><span class="gallery-label">🏊 Le soleil est présent</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/photo-2023-06-26-23-16-60.jpg" alt="Sur l eau" loading="lazy"><span class="gallery-label">🏊 Sur l'eau</span></div>
+          <!-- Équitation -->
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pveh1252.jpg" alt="Anne et Roxana" loading="lazy"><span class="gallery-label">🐴 Anne et Roxana</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/imzd6900.jpg" alt="Anne cavalière heureuse" loading="lazy"><span class="gallery-label">🐴 Anne cavalière heureuse</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/diego-sur-plume.jpg" alt="Diego sur plume" loading="lazy"><span class="gallery-label">🐴 Diego sur plume</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anis.jpg" alt="Anis" loading="lazy"><span class="gallery-label">🐴 Anis</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anne-et-guillaume.jpg" alt="Anne et Guillaume" loading="lazy"><span class="gallery-label">🐴 Anne et Guillaume</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anne-guillaume-joelle.jpg" alt="Anne, Guillaume, Joëlle" loading="lazy"><span class="gallery-label">🐴 Anne, Guillaume, Joëlle</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/dijbril.jpg" alt="Dijbril" loading="lazy"><span class="gallery-label">🐴 Dijbril</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/equitation.jpg" alt="Équitation" loading="lazy"><span class="gallery-label">🐴 Équitation</span></div>
+          <!-- Musculation -->
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/les-bras.jpg" alt="Les bras" loading="lazy"><span class="gallery-label">💪 Les bras</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/abdoss1.jpg" alt="Abdos" loading="lazy"><span class="gallery-label">💪 Abdos</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/anne-et-fessal.jpg" alt="Anne et Fayçal" loading="lazy"><span class="gallery-label">💪 Anne et Fayçal</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/etirements.jpg" alt="Étirements" loading="lazy"><span class="gallery-label">💪 Étirements</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/nicole.jpg" alt="Nicole" loading="lazy"><span class="gallery-label">💪 Nicole</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pere-et-fils1.jpg" alt="Père et fils" loading="lazy"><span class="gallery-label">💪 Père et fils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/qbia3436.jpg" alt="Vincent" loading="lazy"><span class="gallery-label">💪 Vincent</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/uxio7452.jpg" alt="Vincent et François font la course" loading="lazy"><span class="gallery-label">💪 Vincent et François</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/exmf9076.jpg" alt="Encore plus fort" loading="lazy"><span class="gallery-label">💪 Encore plus fort</span></div>
+          <!-- Multi-Sports -->
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/nkfu4691.jpg" alt="Multi Sports 2024" loading="lazy"><span class="gallery-label">🎯 Multi Sports 2024</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/sebastien-et-son-papa-1.jpg" alt="Sébastien et son papa" loading="lazy"><span class="gallery-label">🎯 Sébastien et son papa</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/mariette-alexandre-dominique-2.jpg" alt="Mariette, Alexandre et Dominique" loading="lazy"><span class="gallery-label">🎯 Mariette, Alexandre, Dominique</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/corentin-et-son-papa.jpg" alt="Corentin et son papa" loading="lazy"><span class="gallery-label">🎯 Corentin et son papa</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/mariette-alexandre-dominique.jpg" alt="Mariette Alexandre et Dominique" loading="lazy"><span class="gallery-label">🎯 Mariette, Alexandre, Dominique</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/on-se-prepare-a-jouer.jpg" alt="On se prépare à jouer" loading="lazy"><span class="gallery-label">🎯 On se prépare à jouer</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pyeb7201.jpg" alt="Jeu d'adresse" loading="lazy"><span class="gallery-label">🎯 Jeu d'adresse</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/qfws9546.jpg" alt="Concentration" loading="lazy"><span class="gallery-label">🎯 Concentration</span></div>
+          <!-- Sorties -->
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/pique-nique-base-de-loisirs-saint-quentin.jpg" alt="Pique-nique base de loisirs" loading="lazy"><span class="gallery-label">🎉 Pique-nique base de loisirs</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/c5d7a270-8269-4469-977d-5ab9cf280514.jpeg" alt="Repas Musculation et Multisports" loading="lazy"><span class="gallery-label">🎉 Repas Musculation et Multisports</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/a215a3c3-622c-4a83-94ab-5df7e086e962.jpeg" alt="Repas Musculation et Multisports" loading="lazy"><span class="gallery-label">🎉 Repas Musculation et Multisports</span></div>
+          <!-- Sensibilisations -->
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/hexg8906-1.jpg" alt="Parcours fauteuils" loading="lazy"><span class="gallery-label">♿ Parcours fauteuils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/apci4726-1.jpg" alt="Parcours" loading="lazy"><span class="gallery-label">♿ Parcours</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/iwjy3417-1.jpg" alt="Basket Guyancourt" loading="lazy"><span class="gallery-label">♿ Basket Guyancourt</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/kcet5662.jpg" alt="Préfecture" loading="lazy"><span class="gallery-label">♿ Préfecture</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/nrht4766.jpg" alt="Course Fauteuils" loading="lazy"><span class="gallery-label">♿ Course Fauteuils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/swkx6891.jpg" alt="Guyancourt" loading="lazy"><span class="gallery-label">♿ Guyancourt</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/tvfd9684.jpg" alt="Atelier fauteuil" loading="lazy"><span class="gallery-label">♿ Atelier fauteuil</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/ulpz7456.jpg" alt="Atelier" loading="lazy"><span class="gallery-label">♿ Atelier</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/uudl3422.jpg" alt="Atelier" loading="lazy"><span class="gallery-label">♿ Atelier</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/bgns0799.jpg" alt="Parcours Fauteuils" loading="lazy"><span class="gallery-label">♿ Parcours Fauteuils</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/fffp0382.jpg" alt="Participants Écoles Guyancourt" loading="lazy"><span class="gallery-label">♿ Participants Écoles Guyancourt</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/img-5562.jpg" alt="Torball" loading="lazy"><span class="gallery-label">♿ Torball</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/img-5563.jpg" alt="Torball" loading="lazy"><span class="gallery-label">♿ Torball</span></div>
+          <div class="gallery-item"><img src="https://www.cap-saaa-sqy.fr/medias/album/img-5628.jpg" alt="Torball" loading="lazy"><span class="gallery-label">♿ Torball</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>CAPSAAA SQY</h3>
+          <p>Cap sur le Sport, l'Art, l'Aventure et l'Amitié. Association loi 1901 d'intérêt général.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="activites.html">Activités</a></li>
+            <li><a href="inscriptions.html">Inscriptions</a></li>
+            <li><a href="galerie.html">Galerie photos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>L'association</h4>
+          <ul>
+            <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+            <li><a href="sensibilisations.html">Sensibilisations</a></li>
+            <li><a href="partenaires.html">Partenaires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>14 rue Mansart<br>78190 Trappes</li>
+            <li><a href="tel:+330603414530">06 03 41 45 30</a></li>
+            <li><a href="mailto:capaaasqy@hotmail.fr">capaaasqy@hotmail.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CAPSAAA SQY — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // Gallery tabs
+    const tabs = document.querySelectorAll('.gallery-tabs button');
+    const sections = document.querySelectorAll('.gallery-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Update tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show corresponding section
+        const target = this.getAttribute('data-tab');
+        sections.forEach(s => s.classList.remove('active'));
+        document.getElementById('tab-' + target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
