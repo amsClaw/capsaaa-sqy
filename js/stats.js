@@ -17,7 +17,7 @@
  * activer le Consent Mode GA4 (gtag('consent', ...)).
  * ============================================================ */
 const CAPSAAA_STATS = {
-  gaMeasurementId: "", // ex: "G-XXXXXXXXXX" — à renseigner quand François l'aura transmis
+  gaMeasurementId: "G-VLQ4CQT8PE", // compte GA4 test (Ams) — URL github.io ; à remplacer par l'ID de l'association en prod
 };
 
 (function () {
