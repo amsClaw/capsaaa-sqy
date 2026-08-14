@@ -16,8 +16,14 @@ Accueil
 ├── Hero (photo associative + titre)
 ├── Les activités (6 cartes : Natation, Équitation, Fitness, Musculation, Multi-Sports, Sorties)
 ├── Chiffres clés
+├── Dernières actualités (aperçu, 2 dernières news)
 ├── Témoignage / Valeurs
 └── CTA Contact
+
+Actualités (V1.1)
+├── News : date, titre, corps de texte
+├── Photo optionnelle par news
+└── Lien optionnel (page interne ou externe)
 
 Qui sommes-nous ?
 ├── Histoire (création 1992, évolution du nom)

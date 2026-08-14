@@ -63,19 +63,21 @@ CAPSAAA est une association à but non lucratif créée en 1992, basée à Trapp
 │   └── projet-associatif-capsaaa.pdf  ← Fiche de présentation PDF
 │
 ├── css/
-│   └── style.css                      ← Styles complets (responsive)
+│   └── style.css                      ← Styles complets (responsive + couleurs activités V1.1)
 │
 ├── js/
-│   └── script.js                      ← Interactivité (menu, lightbox, etc.)
+│   ├── script.js                      ← Interactivité (menu, lightbox, formulaire, actualités)
+│   └── actualites.js                  ← Données des actualités (facile à mettre à jour)
 │
 └── pages/
     ├── qui-sommes-nous.html           ← Histoire, valeurs, équipe
     ├── activites.html                 ← Détail des 5 activités
+    ├── actualites.html                ← Rubrique ACTUALITÉS (V1.1)
     ├── sensibilisations.html          ← Ateliers de sensibilisation
     ├── galerie.html                   ← Galerie photos (48 photos, 7 onglets)
-    ├── inscriptions.html              ← Infos pratiques 2025/2026
+    ├── inscriptions.html              ← Infos pratiques + section Documents (V1.1)
     ├── partenaires.html               ← Partenaires + logos + liens utiles
-    └── contact.html                   ← Formulaire + coordonnées
+    └── contact.html                   ← Formulaire fonctionnel (FormSubmit) + coordonnées
 ```
 
 ---
@@ -235,7 +237,32 @@ Les photos sont chargées depuis `https://www.cap-saaa-sqy.fr/medias/album/...` 
    - Clic sur fond ou bouton X pour fermer
    - Touche Échap pour fermer
 5. **Compteurs animés** — Les chiffres (1992, 120+...) s'animent au scroll (Intersection Observer)
-6. **Formulaire de contact** — Simulation d'envoi (feedback visuel, pas de backend)
+6. **Formulaire de contact** — Envoi réel via **FormSubmit** (service gratuit, sans backend)
+   - Champs validés par l'association : nom, prénom, téléphone, email, ville, message
+   - ⚠️ **Premier envoi** : FormSubmit envoie un email d'activation à capaaasqy@hotmail.fr — il faut cliquer le lien une fois pour activer la réception (fait une seule fois, au premier test réel)
+7. **Actualités** — Rendu depuis `js/actualites.js` (page complète + aperçu accueil, 2 dernières)
+
+### `js/actualites.js` (mise à jour des news)
+
+- Chaque news = un objet : `date`, `titre`, `corps`, `photo` (optionnel, relatif à `assets/`), `lien` + `lienTexte` (optionnel, page interne OU adresse externe), `lienExterne: true` si site externe
+- Enregistrer le fichier suffit : les pages se mettent à jour automatiquement
+
+### Traducteur automatique (toutes les pages)
+
+- Widget **Google Traduction** avec langues limitées à **fr, pt, ar, en** (pt/ar prioritaires, en secondaire)
+- ⚠️ Nécessite une connexion internet + serveur HTTP (fonctionne en local via `python3 -m http.server`)
+
+### Couleurs par activité (validées 11/08/2026)
+
+| Activité | Couleur | Variables CSS |
+|---|---|---|
+| Piscine | Bleu | `--act-piscine` |
+| Équitation | Vert | `--act-equitation` |
+| Fitness | Jaune | `--act-fitness` |
+| Musculation | Gris | `--act-musculation` |
+| Multi-Sports | Mauve | `--act-multisport` |
+
+Classes : `act-piscine`, `act-equitation`, `act-fitness`, `act-musculation`, `act-multisport` (bandeau carte, tag, bordure fiche détaillée).
 
 ### Script inline dans `pages/galerie.html`
 

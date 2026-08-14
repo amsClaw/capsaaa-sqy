@@ -73,14 +73,15 @@ Ateliers de sensibilisation au handicap proposés aux écoles, centres de loisir
 ### Structure du site
 
 ```
-index.html                    → Accueil
+index.html                    → Accueil (aperçu actualités)
 pages/qui-sommes-nous.html    → Histoire, mission, bureau
-pages/activites.html          → 5 activités détaillées
+pages/activites.html          → 5 activités détaillées (couleurs par activité)
+pages/actualites.html         → Rubrique ACTUALITÉS (données : js/actualites.js)
 pages/sensibilisations.html   → Ateliers handicap
 pages/galerie.html            → 7 albums (48 photos), lightbox
-pages/inscriptions.html       → Tarifs & infos 2025/2026
+pages/inscriptions.html       → Tarifs & infos + section Documents (PDF)
 pages/partenaires.html        → Logos & liens utiles
-pages/contact.html            → Formulaire + coordonnées
+pages/contact.html            → Formulaire fonctionnel (FormSubmit) + coordonnées
 ```
 
 ### Assets
@@ -113,10 +114,10 @@ assets/
 - ✅ Site développé (V1 draft)
 - ✅ Photos sécurisées en local (46/51)
 - ✅ **Retour association reçu (11/08/2026)** → validations : formulaire (nom/tél/email/ville+message), stats OK, SEO à travailler ensemble, 5 couleurs par activité (bleu/vert/jaune/gris/mauve, acidulées), traducteur pt/ar/en, section Documents, rubrique **ACTUALITÉS** (pas blog) — détails : `docs/RETOUR_ASSOCIATION_2026-08-11.md`
-- ❌ URLs photos encore vers l'ancien site (e-monsite) → à migrer vers assets/photos/
-- ❌ Pas déployé
-- ❌ Formulaire de contact sans backend
-- 🔄 Retour association **à intégrer** (V1.1)
+- ✅ **V1.1 intégrée (14/08/2026)** : formulaire fonctionnel (FormSubmit gratuit, champs nom/prénom/tél/email/ville/message), couleurs par activité appliquées (accueil, activités, inscriptions), page Actualités (données dans `js/actualites.js`), section Documents (fiche d'inscription + règlement en PDF dans `assets/docs/`), traducteur Google (pt/ar/en) sur toutes les pages
+- ❌ URLs photos encore vers l'ancien site (e-monsite) → à migrer vers assets/photos/ (en cours — voir CAPSAAA-02)
+- ❌ Pas déployé (voir CAPSAAA-02)
+- 🔄 SEO à travailler avec l'association (voir CAPSAAA-02)
 
 ### Prochaine action
-Intégrer le retour de l'association (V1.1) : formulaire + couleurs + actualités + documents + traducteur + SEO, puis déployer.
+Voir issue CAPSAAA-02 (photos locales, SEO, déploiement). Pour la démo V1.1 : `python3 -m http.server` à la racine du projet, puis ouvrir http://localhost:8000.

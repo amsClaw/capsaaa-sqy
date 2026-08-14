@@ -20,6 +20,7 @@
         <img src="https://www.cap-saaa-sqy.fr/medias/images/logo-capsaaa-copie.png" alt="CAPSAAA Logo" onerror="this.style.display='none'">
         <span>CAPSAAA <span class="brand-sub">Saint-Quentin-en-Yvelines</span></span>
       </a>
+            <div class="translate-box" id="google_translate_element"></div>
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -51,7 +52,7 @@
       <p style="font-size:1.1rem;margin-bottom:40px">CAPSAAA accueille toutes et tous à partir de 6 ans (jeunes, adultes, sans limite d'âge), quel que soit le handicap — visible ou non (physique, psychique, mental ou sensoriel) — ainsi que les personnes valides désireuses de reprendre une activité à un rythme adapté.</p>
 
       <!-- Natation -->
-      <div class="activity-detail">
+      <div class="activity-detail act-piscine">
         <div class="activity-detail-img">
           <img src="https://www.cap-saaa-sqy.fr/medias/album/cbrh0506.jpg" alt="Natation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🏊</div>'">
         </div>
@@ -67,7 +68,7 @@
       </div>
 
       <!-- Équitation -->
-      <div class="activity-detail">
+      <div class="activity-detail act-equitation">
         <div class="activity-detail-img">
           <img src="https://www.cap-saaa-sqy.fr/medias/album/pveh1252.jpg" alt="Équitation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🐴</div>'">
         </div>
@@ -84,7 +85,7 @@
       </div>
 
       <!-- Musculation -->
-      <div class="activity-detail">
+      <div class="activity-detail act-musculation">
         <div class="activity-detail-img">
           <img src="https://www.cap-saaa-sqy.fr/medias/album/les-bras.jpg" alt="Musculation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>💪</div>'">
         </div>
@@ -100,7 +101,7 @@
       </div>
 
       <!-- Fitness -->
-      <div class="activity-detail">
+      <div class="activity-detail act-fitness">
         <div class="activity-detail-img">
           <img src="https://www.cap-saaa-sqy.fr/medias/album/nkfu4691.jpg" alt="Fitness" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🤸</div>'">
         </div>
@@ -116,7 +117,7 @@
       </div>
 
       <!-- Multi-Sports -->
-      <div class="activity-detail">
+      <div class="activity-detail act-multisport">
         <div class="activity-detail-img">
           <img src="https://www.cap-saaa-sqy.fr/medias/album/hexg8906-1.jpg" alt="Multi Sports" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🎯</div>'">
         </div>
@@ -157,6 +158,7 @@
           <ul>
             <li><a href="../index.html">Accueil</a></li>
             <li><a href="activites.html">Activités</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
             <li><a href="inscriptions.html">Inscriptions</a></li>
             <li><a href="galerie.html">Galerie photos</a></li>
           </ul>
@@ -185,6 +187,18 @@
     </div>
   </footer>
 
-  <script src="../js/script.js"></script>
+    <!-- Traducteur automatique (pt/ar prioritaire, en secondaire) -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,pt,ar,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="../js/script.js"></script>
 </body>
 </html>

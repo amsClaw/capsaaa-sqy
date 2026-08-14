@@ -17,6 +17,23 @@
   --color-white: #FFFFFF;
   --color-border: #E0D6CB;
   --color-success: #4CAF50;
+  /* Couleurs par activité — validées par l'association le 11/08/2026
+     (acidulées et apaisantes, PAS claquantes) */
+  --act-piscine: #4A90C2;
+  --act-piscine-dark: #37749E;
+  --act-piscine-light: #E3F0F8;
+  --act-equitation: #6FA85A;
+  --act-equitation-dark: #558A42;
+  --act-equitation-light: #EAF3E4;
+  --act-fitness: #D9A62E;
+  --act-fitness-dark: #B8891F;
+  --act-fitness-light: #FBF3DC;
+  --act-musculation: #8A8F98;
+  --act-musculation-dark: #6E737C;
+  --act-musculation-light: #EEF0F2;
+  --act-multisport: #8B7AC8;
+  --act-multisport-dark: #6E5CB0;
+  --act-multisport-light: #EFEBF9;
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
@@ -467,6 +484,19 @@ h3 { font-size: 1.4rem; }
   min-height: 120px;
   resize: vertical;
 }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-status {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  min-height: 1.2em;
+}
+.form-status.success { color: var(--color-success); }
+.form-status.error { color: #C0392B; }
 
 /* ---- Gallery ---- */
 .gallery-grid {
@@ -696,6 +726,173 @@ h3 { font-size: 1.4rem; }
   opacity: 0.7;
 }
 
+/* ============================================
+   V1.1 — Couleurs par activité (validées 11/08/2026)
+   Acidulées et apaisantes — PAS claquantes
+   ============================================ */
+
+/* Carte : bandeau supérieur + tag coloré + bordure au survol */
+.activity-card.act-piscine     { border-top: 5px solid var(--act-piscine); }
+.activity-card.act-equitation  { border-top: 5px solid var(--act-equitation); }
+.activity-card.act-fitness     { border-top: 5px solid var(--act-fitness); }
+.activity-card.act-musculation { border-top: 5px solid var(--act-musculation); }
+.activity-card.act-multisport  { border-top: 5px solid var(--act-multisport); }
+
+.activity-card.act-piscine:hover     { box-shadow: 0 8px 30px rgba(74,144,194,0.25); }
+.activity-card.act-equitation:hover  { box-shadow: 0 8px 30px rgba(111,168,90,0.25); }
+.activity-card.act-fitness:hover     { box-shadow: 0 8px 30px rgba(217,166,46,0.25); }
+.activity-card.act-musculation:hover { box-shadow: 0 8px 30px rgba(138,143,152,0.25); }
+.activity-card.act-multisport:hover  { box-shadow: 0 8px 30px rgba(139,122,200,0.25); }
+
+.activity-card.act-piscine .activity-tag     { background: var(--act-piscine-light); color: var(--act-piscine-dark); }
+.activity-card.act-equitation .activity-tag  { background: var(--act-equitation-light); color: var(--act-equitation-dark); }
+.activity-card.act-fitness .activity-tag     { background: var(--act-fitness-light); color: var(--act-fitness-dark); }
+.activity-card.act-musculation .activity-tag { background: var(--act-musculation-light); color: var(--act-musculation-dark); }
+.activity-card.act-multisport .activity-tag  { background: var(--act-multisport-light); color: var(--act-multisport-dark); }
+
+/* Fiche activité détaillée : bordure gauche + titre coloré */
+.activity-detail.act-piscine     { border-left: 6px solid var(--act-piscine); }
+.activity-detail.act-equitation  { border-left: 6px solid var(--act-equitation); }
+.activity-detail.act-fitness     { border-left: 6px solid var(--act-fitness); }
+.activity-detail.act-musculation { border-left: 6px solid var(--act-musculation); }
+.activity-detail.act-multisport  { border-left: 6px solid var(--act-multisport); }
+
+.activity-detail.act-piscine .activity-detail-info h3     { color: var(--act-piscine-dark); }
+.activity-detail.act-equitation .activity-detail-info h3  { color: var(--act-equitation-dark); }
+.activity-detail.act-fitness .activity-detail-info h3     { color: var(--act-fitness-dark); }
+.activity-detail.act-musculation .activity-detail-info h3 { color: var(--act-musculation-dark); }
+.activity-detail.act-multisport .activity-detail-info h3  { color: var(--act-multisport-dark); }
+
+.activity-detail.act-piscine .activity-meta span     { background: var(--act-piscine-light); color: var(--act-piscine-dark); }
+.activity-detail.act-equitation .activity-meta span  { background: var(--act-equitation-light); color: var(--act-equitation-dark); }
+.activity-detail.act-fitness .activity-meta span     { background: var(--act-fitness-light); color: var(--act-fitness-dark); }
+.activity-detail.act-musculation .activity-meta span { background: var(--act-musculation-light); color: var(--act-musculation-dark); }
+.activity-detail.act-multisport .activity-meta span  { background: var(--act-multisport-light); color: var(--act-multisport-dark); }
+
+/* ============================================
+   V1.1 — Actualités (rubrique, PAS un blog)
+   ============================================ */
+.news-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.news-item {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border-left: 5px solid var(--color-primary);
+}
+.news-item-img {
+  height: 260px;
+  overflow: hidden;
+}
+.news-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-item-body { padding: 24px 28px; }
+.news-date {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background: var(--color-bg-alt);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.news-item-body h3 {
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+.news-item-body p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.news-item-body .news-link {
+  font-weight: 600;
+}
+.news-empty {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 40px 0;
+}
+
+/* ============================================
+   V1.1 — Section Documents
+   ============================================ */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+.doc-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+  text-align: center;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+}
+.doc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+.doc-card .doc-icon {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+}
+.doc-card h3 {
+  color: var(--color-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.doc-card p {
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+.doc-card .btn {
+  padding: 10px 22px;
+  font-size: 0.88rem;
+}
+
+/* ============================================
+   V1.1 — Traducteur automatique
+   ============================================ */
+.translate-box {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+}
+.translate-box .goog-te-gadget {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+.translate-box select.goog-te-combo {
+  padding: 6px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0 !important; }
+.goog-logo-link, .goog-te-gadget span { color: var(--color-text-light) !important; }
+
 /* ---- Responsive ---- */
 @media (max-width: 992px) {
   .hero-content {
@@ -712,6 +909,11 @@ h3 { font-size: 1.4rem; }
 
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
+  .translate-box {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+  .translate-box select.goog-te-combo { max-width: 120px; }
   .nav-menu {
     display: none;
     position: absolute;
@@ -726,6 +928,7 @@ h3 { font-size: 1.4rem; }
   }
   .nav-menu.open { display: flex; }
   .nav-menu a { padding: 12px 16px; }
+  .form-row { grid-template-columns: 1fr; }
   .hero { padding: calc(var(--header-height) + 40px) 0 40px; }
   .hero h1 { font-size: 1.8rem; }
   .activities-grid { grid-template-columns: 1fr; }

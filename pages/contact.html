@@ -19,6 +19,7 @@
         <img src="https://www.cap-saaa-sqy.fr/medias/images/logo-capsaaa-copie.png" alt="CAPSAAA Logo" onerror="this.style.display='none'">
         <span>CAPSAAA <span class="brand-sub">Saint-Quentin-en-Yvelines</span></span>
       </a>
+            <div class="translate-box" id="google_translate_element"></div>
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -26,6 +27,7 @@
         <li><a href="../index.html">Accueil</a></li>
         <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
         <li><a href="activites.html">Activités</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
         <li><a href="sensibilisations.html">Sensibilisations</a></li>
         <li><a href="galerie.html">Galerie</a></li>
         <li><a href="inscriptions.html">Inscriptions</a></li>
@@ -94,29 +96,35 @@
         <div class="contact-form">
           <h3>Envoyez-nous un message</h3>
           <form>
-            <div class="form-group">
-              <label for="name">Nom *</label>
-              <input type="text" id="name" name="name" required placeholder="Votre nom">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+              </div>
+              <div class="form-group">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telephone">Téléphone *</label>
+                <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+              </div>
+              <div class="form-group">
+                <label for="email">Adresse mail *</label>
+                <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required placeholder="votre@email.fr">
-            </div>
-            <div class="form-group">
-              <label for="subject">Sujet</label>
-              <select id="subject" name="subject">
-                <option value="">Choisissez un sujet</option>
-                <option value="inscription">Demande d'inscription</option>
-                <option value="sensibilisation">Organiser une sensibilisation</option>
-                <option value="information">Demande d'information</option>
-                <option value="partenariat">Partenariat</option>
-                <option value="autre">Autre</option>
-              </select>
+              <label for="ville">Ville de résidence *</label>
+              <input type="text" id="ville" name="ville" required placeholder="Ex : Trappes, Guyancourt…">
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
               <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
             </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
             <button type="submit" class="btn btn-primary">Envoyer le message</button>
           </form>
         </div>
@@ -136,6 +144,7 @@
           <ul>
             <li><a href="../index.html">Accueil</a></li>
             <li><a href="activites.html">Activités</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
             <li><a href="inscriptions.html">Inscriptions</a></li>
             <li><a href="galerie.html">Galerie photos</a></li>
           </ul>
@@ -164,6 +173,18 @@
     </div>
   </footer>
 
-  <script src="../js/script.js"></script>
+    <!-- Traducteur automatique (pt/ar prioritaire, en secondaire) -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,pt,ar,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="../js/script.js"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@
         <img src="https://www.cap-saaa-sqy.fr/medias/images/logo-capsaaa-copie.png" alt="CAPSAAA Logo" onerror="this.style.display='none'">
         <span>CAPSAAA <span class="brand-sub">Saint-Quentin-en-Yvelines</span></span>
       </a>
+            <div class="translate-box" id="google_translate_element"></div>
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -27,6 +28,7 @@
         <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="pages/qui-sommes-nous.html">Qui sommes-nous ?</a></li>
         <li><a href="pages/activites.html">Activités</a></li>
+        <li><a href="pages/actualites.html">Actualités</a></li>
         <li><a href="pages/sensibilisations.html">Sensibilisations</a></li>
         <li><a href="pages/galerie.html">Galerie</a></li>
         <li><a href="pages/inscriptions.html">Inscriptions</a></li>
@@ -91,7 +93,7 @@
       <p class="section-subtitle">Des sports adaptés à tous, encadrés par des éducateurs diplômés</p>
       <div class="activities-grid">
         <!-- Natation -->
-        <div class="activity-card">
+        <div class="activity-card act-piscine">
           <div class="activity-card-img">
             <img src="https://www.cap-saaa-sqy.fr/medias/album/cbrh0506.jpg" alt="Natation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🏊</div>'">
           </div>
@@ -103,7 +105,7 @@
           </div>
         </div>
         <!-- Équitation -->
-        <div class="activity-card">
+        <div class="activity-card act-equitation">
           <div class="activity-card-img">
             <img src="https://www.cap-saaa-sqy.fr/medias/album/pveh1252.jpg" alt="Équitation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🐴</div>'">
           </div>
@@ -115,7 +117,7 @@
           </div>
         </div>
         <!-- Musculation -->
-        <div class="activity-card">
+        <div class="activity-card act-musculation">
           <div class="activity-card-img">
             <img src="https://www.cap-saaa-sqy.fr/medias/album/les-bras.jpg" alt="Musculation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>💪</div>'">
           </div>
@@ -127,7 +129,7 @@
           </div>
         </div>
         <!-- Fitness -->
-        <div class="activity-card">
+        <div class="activity-card act-fitness">
           <div class="activity-card-img">
             <img src="https://www.cap-saaa-sqy.fr/medias/album/nkfu4691.jpg" alt="Fitness" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🤸</div>'">
           </div>
@@ -139,7 +141,7 @@
           </div>
         </div>
         <!-- Multi-Sports -->
-        <div class="activity-card">
+        <div class="activity-card act-multisport">
           <div class="activity-card-img">
             <img src="https://www.cap-saaa-sqy.fr/medias/album/pique-nique-base-de-loisirs-saint-quentin.jpg" alt="Multi Sports" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🎯</div>'">
           </div>
@@ -163,6 +165,17 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== ACTUALITÉS (aperçu) ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Dernières actualités</h2>
+      <div class="news-list" id="actualites-home"></div>
+      <p style="text-align:center;margin-top:28px">
+        <a href="pages/actualites.html" class="btn btn-outline">Toutes les actualités →</a>
+      </p>
     </div>
   </section>
 
@@ -219,6 +232,7 @@
           <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="pages/activites.html">Activités</a></li>
+            <li><a href="pages/actualites.html">Actualités</a></li>
             <li><a href="pages/inscriptions.html">Inscriptions</a></li>
             <li><a href="pages/galerie.html">Galerie photos</a></li>
           </ul>
@@ -253,6 +267,19 @@
     <img src="" alt="">
   </div>
 
+    <!-- Traducteur automatique (pt/ar prioritaire, en secondaire) -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,pt,ar,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="js/actualites.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
