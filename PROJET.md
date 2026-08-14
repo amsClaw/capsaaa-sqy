@@ -100,24 +100,27 @@ assets/
 └── logo-trappes.png
 ```
 
-### Photos manquantes (introuvables sur l'ancien site)
-| Fichier | Album |
-|---|---|
-| nkfu4691.jpg | Multi-Sports |
-| mariette-alexandre-dominique.jpg | Multi-Sports |
-| pyeb7201.jpg | Multi-Sports |
-| qfws9546.jpg | Multi-Sports |
-| photo-2023-06-26-23-16-58.jpg | Natation |
+### Photos manquantes (introuvables sur l'ancien site — 404 vérifiés 14/08/2026)
+| Fichier | Album | Sort |
+|---|---|---|
+| nkfu4691.jpg | Multi-Sports | retirée de la galerie ; carte Fitness remplacée par etirements.jpg |
+| mariette-alexandre-dominique.jpg | Multi-Sports | retirée (la variante `-2` reste) |
+| pyeb7201.jpg | Multi-Sports | retirée |
+| qfws9546.jpg | Multi-Sports | retirée |
+| photo-2023-06-26-23-16-58.jpg | Natation | retirée (les `-59`/`-60` restent) |
 
 ### État d'avancement
 
 - ✅ Site développé (V1 draft)
-- ✅ Photos sécurisées en local (46/51)
+- ✅ Photos 100 % locales (56 références vérifiées, 0 URL externe restante — 14/08/2026)
 - ✅ **Retour association reçu (11/08/2026)** → validations : formulaire (nom/tél/email/ville+message), stats OK, SEO à travailler ensemble, 5 couleurs par activité (bleu/vert/jaune/gris/mauve, acidulées), traducteur pt/ar/en, section Documents, rubrique **ACTUALITÉS** (pas blog) — détails : `docs/RETOUR_ASSOCIATION_2026-08-11.md`
 - ✅ **V1.1 intégrée (14/08/2026)** : formulaire fonctionnel (FormSubmit gratuit, champs nom/prénom/tél/email/ville/message), couleurs par activité appliquées (accueil, activités, inscriptions), page Actualités (données dans `js/actualites.js`), section Documents (fiche d'inscription + règlement en PDF dans `assets/docs/`), traducteur Google (pt/ar/en) sur toutes les pages
-- ❌ URLs photos encore vers l'ancien site (e-monsite) → à migrer vers assets/photos/ (en cours — voir CAPSAAA-02)
-- ❌ Pas déployé (voir CAPSAAA-02)
-- 🔄 SEO à travailler avec l'association (voir CAPSAAA-02)
+- ✅ **SEO (14/08/2026)** : keywords « sport adapté handicap SQY / association handisport Yvelines », canonical, Open Graph, JSON-LD NGO sur les 9 pages (`tools/seo_inject.py`)
+- ✅ **Stats (14/08/2026)** : `js/stats.js` Matomo-ready (RGPD, consentement) intégré sur les 9 pages — désactivé tant que le compte Matomo/GA n'est pas créé (issue CAPSAAA-03)
+- ✅ **Déployé (14/08/2026)** : GitHub Pages https://amsclaw.github.io/capsaaa-sqy/ + lien démo Cloudflare (tunnel temporaire) pour recette
+- 🔄 Reste : activation du compte stats, domaine cap-saaa-sqy.fr, décision AssoConnect (voir CAPSAAA-03)
 
-### Prochaine action
-Voir issue CAPSAAA-02 (photos locales, SEO, déploiement). Pour la démo V1.1 : `python3 -m http.server` à la racine du projet, puis ouvrir http://localhost:8000.
+### Liens (14/08/2026)
+- Démo durable : https://amsclaw.github.io/capsaaa-sqy/
+- Démo Cloudflare (temporaire, tunnel local) : voir issue CAPSAAA-02 (le tunnel doit être relancé si la machine redémarre : `python3 -m http.server 8000` + `cloudflared tunnel --url http://localhost:8000`)
+- Prochaine action : issue CAPSAAA-03 (stats + domaine).

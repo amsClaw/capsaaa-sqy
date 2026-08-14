@@ -294,45 +294,39 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 
 ---
 
-## 🚀 Déploiement
+## 🚀 Déploiement (état 14/08/2026)
 
-### Option 1 : Netlify (recommandé — gratuit)
-1. Va sur https://app.netlify.com
-2. Connecte-toi (GitHub ou email)
-3. Glisse-dépose le dossier `capsaaa/` dans Netlify Drop
-4. → Obtiens une URL du type `cap-saaa-sqy.netlify.app`
-5. (Optionnel) Configure le nom de domaine personnalisé `cap-saaa-sqy.fr`
+### En ligne maintenant
+- **GitHub Pages (démo durable)** : https://amsclaw.github.io/capsaaa-sqy/ (repo `amsClaw/capsaaa-sqy`, branch `master`, dossier `/`)
+- **Lien démo Cloudflare (temporaire)** : tunnel `cloudflared` vers un serveur local — voir issue CAPSAAA-02 pour l'URL courante
 
-### Option 2 : GitHub Pages (gratuit)
-1. Crée un repo GitHub
-2. Pousse le dossier `capsaaa/` comme contenu du repo
-3. Active GitHub Pages dans Settings → Pages → branch `main`, dossier `/`
-4. → URL du type `username.github.io/capsaaa`
-
-### Option 3 : Hébergement classique
-1. Copie tous les fichiers vers n'importe quel hébergeur (OVH, Ionos, Alwaysdata…)
-2. Pointe le domaine `cap-saaa-sqy.fr` vers le dossier
+### Prochaines étapes
+1. **Domaine cap-saaa-sqy.fr** : actuellement sur e-monsite (ancien site). Le pointage vers GitHub Pages ou Cloudflare Pages se fait une fois la décision AssoConnect prise (question en suspens — le site peut vivre seul dans un premier temps).
+2. **Hébergement de production** : GitHub Pages convient ; Cloudflare Pages (gratuit, + stats Web Analytics intégrées) est l'alternative recommandée si l'association préfère Cloudflare.
+3. **Stats** : activer `js/stats.js` (Matomo Cloud recommandé, RGPD friendly) — voir section stats.
 
 ### Important pour le déploiement
 - Le site est 100% statique → pas de base de données, pas de backend
-- Le formulaire de contact ne fonctionnera pas sans backend → utiliser Netlify Forms, Formspree, ou un service similaire
-- Les photos sont liées à l'ancien site → à moyen terme, les télécharger localement
+- Le formulaire de contact fonctionne via **FormSubmit** (gratuit, sans backend)
+- **⚠️ Premier envoi** : FormSubmit envoie un email d'activation à capaaasqy@hotmail.fr — cliquer le lien une fois pour activer la réception
+- Toutes les photos sont en local (`assets/photos/`) → le site ne dépend plus de l'ancien site
+- Les chemins sont relatifs → le site fonctionne sous un sous-dossier (ex: GitHub Pages)
 
 ---
 
 ## 🔧 Améliorations possibles
 
 ### Priorité haute
-- [ ] **Télécharger toutes les photos en local** dans `assets/photos/` pour ne plus dépendre de l'ancien site
-- [ ] **Rendre le formulaire de contact fonctionnel** (Netlify Forms, Formspree, ou API email)
-- [ ] **Mettre en ligne** sur Netlify/GitHub Pages avec le nom de domaine cap-saaa-sqy.fr
+- [x] **Télécharger toutes les photos en local** dans `assets/photos/` pour ne plus dépendre de l'ancien site — fait le 14/08/2026 (0 URL externe restante)
+- [x] **Rendre le formulaire de contact fonctionnel** — fait via FormSubmit (V1.1)
+- [x] **Mettre en ligne** — fait : GitHub Pages + démo Cloudflare (14/08/2026) ; reste le domaine cap-saaa-sqy.fr
 
 ### Priorité moyenne
-- [ ] **Page "Documents"** dédiée avec les documents d'inscription, les formulaires et le règlement
+- [ ] **Page "Documents"** dédiée avec les documents d'inscription, les formulaires et le règlement (section Documents déjà ajoutée dans Inscriptions)
 - [ ] **Filtres sur la galerie** par année ou par événement
 - [ ] **Animation au scroll** (AOS.js ou Intersection Observer) pour les sections
-- [ ] **SEO** : ajouter des balises meta description sur toutes les pages (déjà partiellement fait)
-- [ ] **Google Analytics** ou Matomo pour le suivi des visites
+- [x] **SEO** : balises meta description + keywords + canonical + OG + JSON-LD sur toutes les pages (14/08/2026)
+- [ ] **Stats de visite** : `js/stats.js` prêt (Matomo, RGPD) — reste à créer le compte et renseigner l'ID
 
 ### Priorité basse
 - [ ] **Carte interactive** des lieux d'activités (Google Maps ou OpenStreetMap)
@@ -365,7 +359,7 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 
 - **Toutes les pages sont liées entre elles** via les menus et les boutons CTA
 - **Les chemins sont relatifs** : `index.html` → `pages/activites.html` → `css/style.css`
-- **Les photos sont chargées depuis le site actuel** : les URLs commencent par `https://www.cap-saaa-sqy.fr/medias/album/...`
+- **Les photos sont en local** dans `assets/photos/` (plus aucune URL vers l'ancien site depuis le 14/08/2026)
 - **Les logos sont dans `assets/`** avec des noms explicites
 - **Le projet associatif PDF** est dans `assets/projet-associatif-capsaaa.pdf`
 - **Le CSS est responsive** avec des breakpoints à 992px, 768px et 480px
