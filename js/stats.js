@@ -1,46 +1,45 @@
 /* ============================================================
- * CAPSAAA — Statistiques de visite (RGPD friendly)
+ * CAPSAAA — Statistiques de visite (Google Analytics 4)
  * ------------------------------------------------------------
- * Désactivé par défaut. Activation en 2 minutes :
+ * DÉSACTIVÉ par défaut : tant que gaMeasurementId est vide,
+ * ce fichier ne charge rien (aucun script, aucun cookie).
  *
- *   Option A (recommandée — RGPD friendly, données auto-hébergées)
- *     Matomo (Cloud ou auto-hébergé) :
- *       1. Créer un site « CAPSAAA » dans Matomo.
- *       2. Copier l'URL du serveur (ex: https://xxx.matomo.cloud)
- *          et l'ID du site (siteId, ex: 1) dans CAPSAAA_STATS.
- *       3. Le consentement (setConsentGiven) est géré ici ;
- *          activer aussi « Exiger le consentement » dans Matomo
- *          (Vie privée > Utilisateurs) si souhaité.
+ * Activation (une fois le client connecté — ~15 min, sans
+ * prérequis technique, voir docs/GUIDE_GOOGLE_ANALYTICS_SIMPLE.md) :
+ *   1. Le client crée le compte GA4 + le flux de données web
+ *      (le guide simple lui a été fourni).
+ *   2. Il nous transmet l'identifiant de mesure « G-XXXXXXXXXX ».
+ *   3. Coller cet identifiant dans CAPSAAA_STATS.gaMeasurementId.
+ *   4. Publier. Les données apparaissent sous 24-48 h.
  *
- *   Option B — Google Analytics 4
- *     Remplacer ce fichier par le snippet GA4 fourni par Google
- *     (Mesurer > Flux de données > Web > balise).
- *
- *   Option C — Cloudflare Web Analytics
- *     Si le site est servi par Cloudflare Pages : coller le beacon
- *     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" ...>
- *     dans le <head> des pages (pas besoin de ce fichier).
+ * Note RGPD : GA4 anonymise les adresses IP par défaut.
+ * Si un bandeau de consentement cookies est ajouté plus tard,
+ * activer le Consent Mode GA4 (gtag('consent', ...)).
  * ============================================================ */
 const CAPSAAA_STATS = {
-  matomoUrl: "",        // ex: "https://capsaaa.matomo.cloud"
-  matomoSiteId: 0,      // ex: 1
+  gaMeasurementId: "", // ex: "G-XXXXXXXXXX" — à renseigner quand François l'aura transmis
 };
 
 (function () {
-  if (!CAPSAAA_STATS.matomoUrl || !CAPSAAA_STATS.matomoSiteId) return;
-  var _paq = (window._paq = window._paq || []);
-  _paq.push(["setConsentGiven"]);
-  _paq.push(["trackPageView"]);
-  _paq.push(["enableLinkTracking"]);
-  (function () {
-    var u = CAPSAAA_STATS.matomoUrl;
-    _paq.push(["setTrackerUrl", u + "/matomo.php"]);
-    _paq.push(["setSiteId", String(CAPSAAA_STATS.matomoSiteId)]);
-    var d = document,
-      g = d.createElement("script"),
-      s = d.getElementsByTagName("script")[0];
-    g.async = true;
-    g.src = u + "/matomo.js";
-    s.parentNode.insertBefore(g, s);
-  })();
+  const id = CAPSAAA_STATS.gaMeasurementId;
+  if (!id) return; // pas d'ID → aucun chargement, aucun suivi
+
+  // 1) Chargement de la balise gtag.js
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+  document.head.appendChild(s);
+
+  // 2) dataLayer + fonction gtag (les appels avant le chargement
+  //    de gtag.js sont mis en file et rejoués par la balise)
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+
+  // 3) Configuration de la propriété (envoie automatiquement
+  //    la page_vue sur chaque page)
+  gtag("js", new Date());
+  gtag("config", id);
 })();

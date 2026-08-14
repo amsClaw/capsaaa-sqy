@@ -116,7 +116,7 @@ assets/
 - ✅ **Retour association reçu (11/08/2026)** → validations : formulaire (nom/tél/email/ville+message), stats OK, SEO à travailler ensemble, 5 couleurs par activité (bleu/vert/jaune/gris/mauve, acidulées), traducteur pt/ar/en, section Documents, rubrique **ACTUALITÉS** (pas blog) — détails : `docs/RETOUR_ASSOCIATION_2026-08-11.md`
 - ✅ **V1.1 intégrée (14/08/2026)** : formulaire fonctionnel (FormSubmit gratuit, champs nom/prénom/tél/email/ville/message), couleurs par activité appliquées (accueil, activités, inscriptions), page Actualités (données dans `js/actualites.js`), section Documents (fiche d'inscription + règlement en PDF dans `assets/docs/`), traducteur Google (pt/ar/en) sur toutes les pages
 - ✅ **SEO (14/08/2026)** : keywords « sport adapté handicap SQY / association handisport Yvelines », canonical, Open Graph, JSON-LD NGO sur les 9 pages (`tools/seo_inject.py`)
-- ✅ **Stats (14/08/2026)** : `js/stats.js` Matomo-ready (RGPD, consentement) intégré sur les 9 pages — désactivé tant que le compte Matomo/GA n'est pas créé (issue CAPSAAA-03)
+- ✅ **Stats (14/08/2026)** : `js/stats.js` prêt **Google Analytics 4** (gtag.js, placeholder centralisé `gaMeasurementId`, désactivé si ID absent) intégré sur les 9 pages. Décision Ams : GA plutôt que Matomo. Guide simple pour l'association : `docs/GUIDE_GOOGLE_ANALYTICS_SIMPLE.md`. Reste : François crée le compte et transmet l'ID G-… (CAPSAAA-03)
 - ✅ **Déployé (14/08/2026)** : GitHub Pages https://amsclaw.github.io/capsaaa-sqy/ + lien démo Cloudflare (tunnel temporaire) pour recette
 - 🔄 Reste : activation du compte stats, domaine cap-saaa-sqy.fr, décision AssoConnect (voir CAPSAAA-03)
 

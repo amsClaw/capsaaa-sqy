@@ -303,7 +303,7 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 ### Prochaines étapes
 1. **Domaine cap-saaa-sqy.fr** : actuellement sur e-monsite (ancien site). Le pointage vers GitHub Pages ou Cloudflare Pages se fait une fois la décision AssoConnect prise (question en suspens — le site peut vivre seul dans un premier temps).
 2. **Hébergement de production** : GitHub Pages convient ; Cloudflare Pages (gratuit, + stats Web Analytics intégrées) est l'alternative recommandée si l'association préfère Cloudflare.
-3. **Stats** : activer `js/stats.js` (Matomo Cloud recommandé, RGPD friendly) — voir section stats.
+3. **Stats** : renseigner l'identifiant GA4 (`G-…`) dans `CAPSAAA_STATS.gaMeasurementId` (fichier `js/stats.js`) quand François aura créé le compte — voir section « 📊 Statistiques de visite ».
 
 ### Important pour le déploiement
 - Le site est 100% statique → pas de base de données, pas de backend
@@ -311,6 +311,18 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 - **⚠️ Premier envoi** : FormSubmit envoie un email d'activation à capaaasqy@hotmail.fr — cliquer le lien une fois pour activer la réception
 - Toutes les photos sont en local (`assets/photos/`) → le site ne dépend plus de l'ancien site
 - Les chemins sont relatifs → le site fonctionne sous un sous-dossier (ex: GitHub Pages)
+
+---
+
+## 📊 Statistiques de visite (Google Analytics 4)
+
+**Décision Ams (14/08/2026) : Google Analytics (pas Matomo).**
+
+- `js/stats.js` est **GA4-ready** : balise `gtag.js`, placeholder centralisé `CAPSAAA_STATS.gaMeasurementId`.
+- **Désactivé par défaut** : tant que `gaMeasurementId` est vide, aucun script n'est chargé, aucun cookie posé (RGPD).
+- Le fichier est déjà inclus sur les 9 pages (`<script src="js/stats.js" defer>`).
+- **Guide client prêt** : `docs/GUIDE_GOOGLE_ANALYTICS_SIMPLE.md` (non-informaticiens, ~15 min) — création du compte, propriété, flux de données, obtention de l'identifiant `G-XXXXXXXXXX`.
+- **À faire (CAPSAAA-03)** : demander à François de créer le compte et transmettre l'ID `G-…` (le guide sera joint à la communication client), puis coller l'ID dans `js/stats.js` et republier. Données visibles sous 24-48 h.
 
 ---
 
@@ -326,7 +338,7 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 - [ ] **Filtres sur la galerie** par année ou par événement
 - [ ] **Animation au scroll** (AOS.js ou Intersection Observer) pour les sections
 - [x] **SEO** : balises meta description + keywords + canonical + OG + JSON-LD sur toutes les pages (14/08/2026)
-- [ ] **Stats de visite** : `js/stats.js` prêt (Matomo, RGPD) — reste à créer le compte et renseigner l'ID
+- [ ] **Stats de visite** : `js/stats.js` prêt (GA4/gtag.js, désactivé sans ID) — reste à créer le compte et renseigner l'ID G-… (guide : `docs/GUIDE_GOOGLE_ANALYTICS_SIMPLE.md`)
 
 ### Priorité basse
 - [ ] **Carte interactive** des lieux d'activités (Google Maps ou OpenStreetMap)
