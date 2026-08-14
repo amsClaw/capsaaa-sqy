@@ -19,7 +19,16 @@
         <img src="https://www.cap-saaa-sqy.fr/medias/images/logo-capsaaa-copie.png" alt="CAPSAAA Logo" onerror="this.style.display='none'">
         <span>CAPSAAA <span class="brand-sub">Saint-Quentin-en-Yvelines</span></span>
       </a>
-            <div class="translate-box" id="google_translate_element"></div>
+            <div class="translate-box">
+              <select class="lang-select" aria-label="Choisir la langue" onchange="setPageLanguage(this.value)">
+                <option value="">🌐 Langue</option>
+                <option value="fr">Français</option>
+                <option value="pt">Português</option>
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+            <div id="google_translate_element" style="display:none"></div>
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -195,6 +204,11 @@
         pageLanguage: 'fr',
         includedLanguages: 'fr,pt,ar,en',
       }, 'google_translate_element');
+    }
+    function setPageLanguage(lang) {
+      if (!lang) lang = 'fr';
+      document.cookie = 'googtrans=/fr/' + lang + '; path=/; expires=Thu, 31 Dec 2099 23:59:59 GMT';
+      location.reload();
     }
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
