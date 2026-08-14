@@ -26,12 +26,14 @@ def patch_nav(html, prefix):
     """Ajoute le lien Actualités dans la nav, après Activités."""
     if "actualites.html" in html:
         return html, False
-    # nav: ligne Activités
+    # la page courante peut porter class="active" sur son lien Activités
     act_li = f'<li><a href="{prefix}activites.html">Activités</a></li>'
+    act_li_active = f'<li><a href="{prefix}activites.html" class="active">Activités</a></li>'
     news_li = f'<li><a href="{prefix}actualites.html">Actualités</a></li>'
-    if act_li in html:
-        html = html.replace(act_li, act_li + "\n        " + news_li, 1)
-        return html, True
+    for needle in (act_li, act_li_active):
+        if needle in html:
+            html = html.replace(needle, needle + "\n        " + news_li, 1)
+            return html, True
     return html, False
 
 def patch_footer(html, prefix):
