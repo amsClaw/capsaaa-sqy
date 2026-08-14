@@ -2,6 +2,28 @@
    CAPSAAA — JavaScript
    ============================================ */
 
+// ---- Traducteur : libellé court du sélecteur de langue ----
+(function () {
+  function relabelLangue() {
+    var links = document.querySelectorAll('.goog-te-gadget-simple a');
+    links.forEach(function (a) {
+      var s = a.querySelector('span');
+      if (s && s.textContent.indexOf('Sélectionner') !== -1) {
+        s.textContent = 'Langue';
+      }
+    });
+  }
+  // Le widget Google Translate est injecté après l'init → on observe les changements
+  var box = document.getElementById('google_translate_element');
+  if (box) {
+    var mo = new MutationObserver(function () {
+      relabelLangue();
+    });
+    mo.observe(box, { childList: true, subtree: true, characterData: true });
+    setTimeout(relabelLangue, 1500);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
 
   // ---- Mobile Nav Toggle ----
