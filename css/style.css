@@ -40,7 +40,7 @@
   --shadow: 0 2px 12px rgba(0,0,0,0.08);
   --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
   --transition: 0.3s ease;
-  --max-width: 1200px;
+  --max-width: 1260px;
   --header-height: 72px;
 }
 
@@ -234,7 +234,7 @@ h3 { font-size: 1.4rem; }
   align-items: center;
   gap: 2px;
   list-style: none;
-  padding-right: 130px; /* espace réservé au sélecteur de langue (V1.2) */
+  padding-right: 120px; /* espace réservé au sélecteur de langue (V1.2) */
 }
 .nav-menu a {
   display: block;
@@ -993,9 +993,9 @@ h3 { font-size: 1.4rem; }
   align-items: center;
   position: relative;
 }
-/* V1.2 — sur desktop (≥1301 px) le sélecteur de langue sort du flux des liens du menu :
+/* V1.2 — sur desktop (≥1401 px) le sélecteur de langue sort du flux des liens du menu :
    positionné à droite du header, plus aucun chevauchement avec les titres */
-@media (min-width: 1301px) {
+@media (min-width: 1401px) {
   .translate-box {
     position: absolute;
     right: 20px;
@@ -1051,9 +1051,10 @@ body { top: 0 !important; }
   .activity-detail { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 1300px) {
-  /* V1.2.1 — le menu complet (9 liens) ne tient pas sous ~1300 px : menu hamburger.
-     Corrige le chevauchement du bandeau sur le logo et du sélecteur de langue. */
+@media (max-width: 1400px) {
+  /* V1.2.1 — le menu complet (9 liens) ne tient pas confortablement sous
+     ~1400 px : menu hamburger. Corrige le chevauchement du bandeau sur le
+     logo et du sélecteur de langue sur les écrans moyens. */
   .nav-toggle { display: flex; }
   .translate-box {
     margin-left: auto;
