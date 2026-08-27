@@ -26,6 +26,15 @@
 - [ ] Il crée le compte → nous transmet l'ID **G-…** → on active les stats (code déjà prêt)
 - [ ] À défaut : proposer de le faire ensemble pendant l'appel (partage d'écran)
 
+### ⚠️ 3bis. ACTIVER LE FORMULAIRE DE CONTACT (important !)
+- [ ] Le site FormSubmit n'a jamais été activé → **aucun message du formulaire n'arrive**
+- [ ] François doit ouvrir sa boîte **capaaasqy@hotmail.fr** et chercher l'email de
+      **FormSubmit** (objet : « Action Required: Activate FormSubmit » — envoyé
+      récemment, il y en a plusieurs) puis **cliquer le lien « Activate Form »**
+- [ ] Après son clic : il teste le formulaire (https://amsclaw.github.io/capsaaa-sqy/pages/contact.html)
+      → le captcha « je ne suis pas un robot » s'affiche → il valide l'envoi
+- [ ] On confirme de notre côté que le message arrive (ou il nous confirme)
+
 ### 4. Nom de domaine cap-saaa-sqy.fr
 - [ ] Rappel : le domaine pointe encore vers l'ancien site (e-monsite)
 - [ ] Décision à prendre : transfert vers le nouvel hébergement (GitHub Pages) — qui s'en occupe ? (registrar e-monsite + l'association doit valider)
