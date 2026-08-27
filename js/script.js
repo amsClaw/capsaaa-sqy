@@ -130,61 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // ---- Contact form — envoi via FormSubmit (service gratuit, sans backend) ----
-  // V1.2 : captcha activé (_captcha: 'true') — contrôle « je ne suis pas un robot »
-  // Le premier envoi déclenche un email d'activation chez FormSubmit
-  // (adresse cible : capaaasqy@hotmail.fr) à confirmer une seule fois.
-  const contactForm = document.querySelector('.contact-form form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = this;
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const statusEl = form.querySelector('.form-status');
-      const originalText = submitBtn.textContent;
-
-      // Champs exigés par l'association (retour 11/08/2026)
-      const data = {
-        nom: form.querySelector('#nom').value.trim(),
-        prenom: form.querySelector('#prenom').value.trim(),
-        telephone: form.querySelector('#telephone').value.trim(),
-        email: form.querySelector('#email').value.trim(),
-        ville: form.querySelector('#ville').value.trim(),
-        message: form.querySelector('#message').value.trim(),
-        _subject: '[Site CAPSAAA] Message de ' + form.querySelector('#nom').value.trim() + ' ' + form.querySelector('#prenom').value.trim(),
-        _template: 'table',
-        _captcha: 'true'
-      };
-
-      // Validation rapide
-      if (!data.nom || !data.prenom || !data.telephone || !data.email || !data.ville || !data.message) {
-        if (statusEl) { statusEl.textContent = 'Merci de remplir tous les champs.'; statusEl.className = 'form-status error'; }
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Envoi en cours…';
-
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/capaaasqy@hotmail.fr', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        if (res.ok) {
-          if (statusEl) { statusEl.textContent = 'Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.'; statusEl.className = 'form-status success'; }
-          form.reset();
-        } else {
-          throw new Error('HTTP ' + res.status);
-        }
-      } catch (err) {
-        if (statusEl) { statusEl.textContent = "Une erreur s'est produite. Merci de réessayer ou d'écrire directement à capaaasqy@hotmail.fr"; statusEl.className = 'form-status error'; }
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }
-    });
-  }
+  // ---- Contact form — envoi standard FormSubmit (V1.2.2) :
+  // le submit natif du formulaire part vers formsubmit.co (action du <form>),
+  // avec captcha « je ne suis pas un robot » vérifié côté serveur (le captcha
+  // ne fonctionne pas en mode AJAX). Les champs required gèrent la validation.
 
   // ---- Actualités : rendu depuis js/actualites.js (facile à mettre à jour) ----
   // #actualites-list = page complète | #actualites-home = aperçu accueil (2 max)
