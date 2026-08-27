@@ -71,13 +71,13 @@
       <ul class="nav-menu">
         <li><a href="../index.html">Accueil</a></li>
         <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-        <li><a href="activites.html" class="active">Activités</a></li>
+        <li><a href="activites.html" class="active">Nos Activités</a></li>
         <li><a href="actualites.html">Actualités</a></li>
         <li><a href="sensibilisations.html">Sensibilisations</a></li>
         <li><a href="galerie.html">Galerie</a></li>
-        <li><a href="inscriptions.html">Inscriptions</a></li>
-        <li><a href="partenaires.html">Partenaires</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="inscriptions.html">Nous rejoindre</a></li>
+        <li><a href="partenaires.html">Nos Partenaires</a></li>
+        <li><a href="contact.html">Nous contacter</a></li>
       </ul>
     </nav>
   </header>
@@ -94,87 +94,89 @@
   <section class="content-page">
     <div class="container">
 
-      <p style="font-size:1.1rem;margin-bottom:40px">CAPSAAA accueille toutes et tous à partir de 6 ans (jeunes, adultes, sans limite d'âge), quel que soit le handicap — visible ou non (physique, psychique, mental ou sensoriel) — ainsi que les personnes valides désireuses de reprendre une activité à un rythme adapté.</p>
+      <p style="font-size:1.1rem;margin-bottom:12px">CAPSAAA accueille toutes et tous à partir de 6 ans (jeunes, adultes, sans limite d'âge), quel que soit le handicap — visible ou non (physique, psychique, mental ou sensoriel) — ainsi que les personnes valides désireuses de reprendre une activité à un rythme adapté.</p>
+      <p style="color:var(--color-text-light);margin-bottom:40px">Chaque activité est encadrée par des éducateurs sportifs diplômés. Cliquez sur « En savoir plus » pour découvrir le détail de chaque activité.</p>
 
-      <!-- Natation -->
-      <div class="activity-detail act-piscine">
-        <div class="activity-detail-img">
-          <img src="../assets/photos/cbrh0506.jpg" alt="Natation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🏊</div>'">
-        </div>
-        <div class="activity-detail-info">
-          <h3>Activités aquatiques</h3>
-          <div class="activity-meta">
-            <span>Piscine Monquaut — Trappes</span>
-            <span>Dès 5 ans</span>
-          </div>
-          <p>Sous la surveillance de 2 maîtres nageurs, chacun peut vivre son expérience et se détendre dans l'eau, jouer et nager à son rythme. Il ne s'agit pas de cours de natation.</p>
-          <p>Les pratiquants non autonomes sont accompagnés par un adulte valide. Un fauteuil de mise à l'eau permet l'accès au bassin des personnes à mobilité réduite.</p>
-        </div>
-      </div>
+      <div class="activities-overview-grid">
 
-      <!-- Équitation -->
-      <div class="activity-detail act-equitation">
-        <div class="activity-detail-img">
-          <img src="../assets/photos/pveh1252.jpg" alt="Équitation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🐴</div>'">
-        </div>
-        <div class="activity-detail-info">
-          <h3>Équitation adaptée</h3>
-          <div class="activity-meta">
-            <span>Club SQY Équitation — Île aux Loisirs</span>
-            <span>À partir de 6 ans</span>
-            <span>7 cavaliers max</span>
+        <!-- Natation -->
+        <div class="activity-card act-piscine">
+          <div class="activity-card-img">
+            <img src="../assets/photos/cbrh0506.jpg" alt="Activités aquatiques" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🏊</div>'">
           </div>
-          <p>Selon leur taille, leur âge et leurs capacités, les cavaliers peuvent monter un cheval, un double poney ou un shetland.</p>
-          <p>Les séances sont encadrées par un instructeur d'équitation. Chaque participant apprend à soigner son animal, à monter et diriger sa monture. Des accompagnants bénévoles assistent les cavaliers pour brosser leur monture, curer les pieds, seller et brider, se mettre en selle !</p>
+          <div class="activity-card-body">
+            <h3>Activités aquatiques</h3>
+            <span class="activity-tag">Piscine Monquaut — Trappes</span>
+            <p>Détente et jeux dans l'eau à son rythme, dès 5 ans. Accompagnement personnalisé, fauteuil de mise à l'eau disponible.</p>
+            <a href="activite-aquatique.html" class="btn btn-outline" style="padding:8px 20px;font-size:0.85rem">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Musculation -->
-      <div class="activity-detail act-musculation">
-        <div class="activity-detail-img">
-          <img src="../assets/photos/les-bras.jpg" alt="Musculation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>💪</div>'">
-        </div>
-        <div class="activity-detail-info">
-          <h3>Musculation</h3>
-          <div class="activity-meta">
-            <span>Gymnase Aviation — Guyancourt</span>
-            <span>À partir de 16 ans</span>
+        <!-- Équitation -->
+        <div class="activity-card act-equitation">
+          <div class="activity-card-img">
+            <img src="../assets/photos/pveh1252.jpg" alt="Équitation adaptée" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🐴</div>'">
           </div>
-          <p>Sous la surveillance d'un éducateur sportif, les séances débutent par des exercices individualisés et se poursuivent par des séances collectives : zumba, aérobic, cardio-boxing, fitness… Elles se terminent par des étirements.</p>
-          <p>Des Motomed sont mis à disposition pour la musculation des bras et des jambes des personnes en situation d'handicap moteur.</p>
+          <div class="activity-card-body">
+            <h3>Équitation adaptée</h3>
+            <span class="activity-tag">Club SQY Équitation — Île aux Loisirs</span>
+            <p>Cheval, double poney ou shetland selon les capacités, dès 6 ans. Soin de l'animal et monte encadrés.</p>
+            <a href="activite-equitation.html" class="btn btn-outline" style="padding:8px 20px;font-size:0.85rem">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Fitness -->
-      <div class="activity-detail act-fitness">
-        <div class="activity-detail-img">
-          <img src="../assets/photos/etirements.jpg" alt="Fitness" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🤸</div>'">
-        </div>
-        <div class="activity-detail-info">
-          <h3>Fitness</h3>
-          <div class="activity-meta">
-            <span>Salle Auguste-Renoir — Guyancourt</span>
-            <span>À partir de 16 ans</span>
+        <!-- Musculation -->
+        <div class="activity-card act-musculation">
+          <div class="activity-card-img">
+            <img src="../assets/photos/les-bras.jpg" alt="Musculation" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>💪</div>'">
           </div>
-          <p>Un programme varié, différent chaque semaine : zumba, drumfit, pilates, step fitness, stretching/relaxation, renforcement musculaire…</p>
-          <p>Dans une démarche de <strong>sport-santé</strong>, cette activité accueille notamment les personnes disposant d'une prescription médicale. Elle favorise la remise en forme, la prévention et le maintien de la santé par le mouvement.</p>
+          <div class="activity-card-body">
+            <h3>Musculation</h3>
+            <span class="activity-tag">Gymnase Aviation — Guyancourt</span>
+            <p>Exercices individualisés puis collectifs (zumba, aérobic, cardio-boxing), dès 16 ans. Motomed pour handicap moteur.</p>
+            <a href="activite-musculation.html" class="btn btn-outline" style="padding:8px 20px;font-size:0.85rem">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Multi-Sports -->
-      <div class="activity-detail act-multisport">
-        <div class="activity-detail-img">
-          <img src="../assets/photos/hexg8906-1.jpg" alt="Multi Sports" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:250px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🎯</div>'">
-        </div>
-        <div class="activity-detail-info">
-          <h3>Multi-Sports</h3>
-          <div class="activity-meta">
-            <span>Gymnase Aviation — Guyancourt</span>
-            <span>À partir de 15 ans</span>
+        <!-- Fitness -->
+        <div class="activity-card act-fitness">
+          <div class="activity-card-img">
+            <img src="../assets/photos/etirements.jpg" alt="Fitness" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🤸</div>'">
           </div>
-          <p>En fonction des souhaits et des capacités, des jeux sont proposés : boccia, badminton, tennis de table, jeux de ballons, tir à l'arc.</p>
-          <p>Une activité variée et ludique pour découvrir ou redécouvrir différentes disciplines sportives dans une ambiance conviviale.</p>
+          <div class="activity-card-body">
+            <h3>Fitness</h3>
+            <span class="activity-tag">Salle Auguste-Renoir — Guyancourt</span>
+            <p>Zumba, drumfit, pilates, step, stretching — un programme varié chaque semaine en musique. Sport-santé, dès 16 ans.</p>
+            <a href="activite-fitness.html" class="btn btn-outline" style="padding:8px 20px;font-size:0.85rem">En savoir plus</a>
+          </div>
         </div>
+
+        <!-- Multi-Sports -->
+        <div class="activity-card act-multisport">
+          <div class="activity-card-img">
+            <img src="../assets/photos/hexg8906-1.jpg" alt="Multi-Sports" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🎯</div>'">
+          </div>
+          <div class="activity-card-body">
+            <h3>Multi-Sports</h3>
+            <span class="activity-tag">Gymnase Aviation — Guyancourt</span>
+            <p>Boccia, badminton, tennis de table, jeux de ballons, tir à l'arc — selon les envies et capacités, dès 15 ans.</p>
+            <a href="activite-multisport.html" class="btn btn-outline" style="padding:8px 20px;font-size:0.85rem">En savoir plus</a>
+          </div>
+        </div>
+
+        <!-- Sorties -->
+        <div class="activity-card">
+          <div class="activity-card-img">
+            <img src="../assets/photos/iwjy3417.jpg" alt="Sorties" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--color-primary-light);height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem\'>🎉</div>'">
+          </div>
+          <div class="activity-card-body">
+            <h3>Sorties &amp; Événements</h3>
+            <span class="activity-tag">Toute l'année</span>
+            <p>Moments de partage, pique-niques, sorties culturelles et participation aux forums des associations.</p>
+            <a href="actualites.html" class="btn btn-outline" style="padding:8px 20px;font-size:0.85rem">Voir les actualités</a>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -202,9 +204,9 @@
           <h4>Liens rapides</h4>
           <ul>
             <li><a href="../index.html">Accueil</a></li>
-            <li><a href="activites.html">Activités</a></li>
+            <li><a href="activites.html">Nos Activités</a></li>
             <li><a href="actualites.html">Actualités</a></li>
-            <li><a href="inscriptions.html">Inscriptions</a></li>
+            <li><a href="inscriptions.html">Nous rejoindre</a></li>
             <li><a href="galerie.html">Galerie photos</a></li>
           </ul>
         </div>
@@ -213,8 +215,8 @@
           <ul>
             <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
             <li><a href="sensibilisations.html">Sensibilisations</a></li>
-            <li><a href="partenaires.html">Partenaires</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="partenaires.html">Nos Partenaires</a></li>
+            <li><a href="contact.html">Nous contacter</a></li>
           </ul>
         </div>
         <div class="footer-col">

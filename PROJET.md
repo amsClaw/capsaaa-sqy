@@ -118,9 +118,10 @@ assets/
 - ✅ **SEO (14/08/2026)** : keywords « sport adapté handicap SQY / association handisport Yvelines », canonical, Open Graph, JSON-LD NGO sur les 9 pages (`tools/seo_inject.py`)
 - ✅ **Stats (14/08/2026)** : `js/stats.js` prêt **Google Analytics 4** (gtag.js, placeholder centralisé `gaMeasurementId`, désactivé si ID absent) intégré sur les 9 pages. Décision Ams : GA plutôt que Matomo. Guide simple pour l'association : `docs/GUIDE_GOOGLE_ANALYTICS_SIMPLE.md`. Reste : François crée le compte et transmet l'ID G-… (CAPSAAA-03)
 - ✅ **Déployé (14/08/2026)** : GitHub Pages https://amsclaw.github.io/capsaaa-sqy/ + lien démo Cloudflare (tunnel temporaire) pour recette
-- 🔄 Reste : activation du compte stats, domaine cap-saaa-sqy.fr, décision AssoConnect (voir CAPSAAA-03)
+- ✅ **V1.2 — Retour François 26/08 intégré (27/08/2026)** : nav renommée (Nos Activités, Nous rejoindre, Nos Partenaires, Nous contacter), sélecteur langue déplacé (plus de chevauchement), accueil resserré (chiffres 5 activités + conviviales, éducateurs sportifs diplômés, valeurs enrichies, bloc sensibilisation = titre + texte fournis par François), 5 pages détaillées par activité avec infos pratiques + bénéfices + photos + emplacements témoignages (à compléter par l'association), reCAPTCHA activé sur le formulaire. Détails : `docs/ANALYSE_SITE_V1_FRANCOIS_2026-08-26.docx` + issue Paperclip CAPSAAA-04
+- 🔄 Reste : validation Ams + envoi du retour à François, activation du compte stats officiel, domaine cap-saaa-sqy.fr, décision AssoConnect (voir CAPSAAA-03)
 
-### Liens (14/08/2026)
+### Liens (27/08/2026)
 - Démo durable : https://amsclaw.github.io/capsaaa-sqy/
 - Démo Cloudflare (temporaire, tunnel local) : voir issue CAPSAAA-02 (le tunnel doit être relancé si la machine redémarre : `python3 -m http.server 8000` + `cloudflared tunnel --url http://localhost:8000`)
-- Prochaine action : issue CAPSAAA-03 (stats + domaine).
+- Prochaine action : validation Ams de la V1.2 → réponse à François (mail du 26/08) + issue CAPSAAA-03 (stats + domaine + AssoConnect).

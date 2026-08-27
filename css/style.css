@@ -179,6 +179,7 @@ h3 { font-size: 1.4rem; }
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  position: relative;
 }
 
 .navbar-brand {
@@ -231,16 +232,18 @@ h3 { font-size: 1.4rem; }
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
+  padding-right: 150px; /* espace réservé au sélecteur de langue (V1.2) */
 }
 .nav-menu a {
   display: block;
-  padding: 8px 16px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
   color: var(--color-text);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
+  white-space: nowrap; /* chaque libellé du menu tient sur une ligne */
   transition: all var(--transition);
 }
 .nav-menu a:hover,
@@ -282,12 +285,15 @@ h3 { font-size: 1.4rem; }
 }
 .hero .hero-acronym {
   display: flex;
+  flex-wrap: wrap; /* V1.2 — évite le débordement horizontal sur mobile */
   gap: 2px;
+  row-gap: 6px;
   color: var(--color-primary);
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
+.hero-text { min-width: 0; } /* V1.2 — laisse le texte se replier dans la grille */
 .hero p {
   font-size: 1.15rem;
   opacity: 0.9;
@@ -325,6 +331,7 @@ h3 { font-size: 1.4rem; }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  border: 2px solid var(--color-border);
   transition: all var(--transition);
 }
 .activity-card:hover {
@@ -732,11 +739,23 @@ h3 { font-size: 1.4rem; }
    ============================================ */
 
 /* Carte : bandeau supérieur + tag coloré + bordure au survol */
-.activity-card.act-piscine     { border-top: 5px solid var(--act-piscine); }
-.activity-card.act-equitation  { border-top: 5px solid var(--act-equitation); }
-.activity-card.act-fitness     { border-top: 5px solid var(--act-fitness); }
-.activity-card.act-musculation { border-top: 5px solid var(--act-musculation); }
-.activity-card.act-multisport  { border-top: 5px solid var(--act-multisport); }
+.activity-card.act-piscine     { border: 2px solid var(--act-piscine); }
+.activity-card.act-equitation  { border: 2px solid var(--act-equitation); }
+.activity-card.act-fitness     { border: 2px solid var(--act-fitness); }
+.activity-card.act-musculation { border: 2px solid var(--act-musculation); }
+.activity-card.act-multisport  { border: 2px solid var(--act-multisport); }
+/* V1.2 — fond de la carte coloré par activité (remarque François : rendre la
+   couleur distinctive plus visible) */
+.activity-card.act-piscine .activity-card-body     { background: var(--act-piscine-light); }
+.activity-card.act-equitation .activity-card-body  { background: var(--act-equitation-light); }
+.activity-card.act-fitness .activity-card-body     { background: var(--act-fitness-light); }
+.activity-card.act-musculation .activity-card-body { background: var(--act-musculation-light); }
+.activity-card.act-multisport .activity-card-body  { background: var(--act-multisport-light); }
+.activity-card.act-piscine .activity-card-body h3     { color: var(--act-piscine-dark); }
+.activity-card.act-equitation .activity-card-body h3  { color: var(--act-equitation-dark); }
+.activity-card.act-fitness .activity-card-body h3     { color: var(--act-fitness-dark); }
+.activity-card.act-musculation .activity-card-body h3 { color: var(--act-musculation-dark); }
+.activity-card.act-multisport .activity-card-body h3  { color: var(--act-multisport-dark); }
 
 .activity-card.act-piscine:hover     { box-shadow: 0 8px 30px rgba(74,144,194,0.25); }
 .activity-card.act-equitation:hover  { box-shadow: 0 8px 30px rgba(111,168,90,0.25); }
@@ -770,10 +789,108 @@ h3 { font-size: 1.4rem; }
 .activity-detail.act-multisport .activity-meta span  { background: var(--act-multisport-light); color: var(--act-multisport-dark); }
 
 /* ============================================
+   V1.2 — Pages activités détaillées (remarques François 26/08)
+   ============================================ */
+.activity-page-hero {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  border-left: 8px solid var(--color-primary);
+}
+.activity-page-hero.act-piscine     { border-left-color: var(--act-piscine);     background: var(--act-piscine-light); }
+.activity-page-hero.act-equitation  { border-left-color: var(--act-equitation);  background: var(--act-equitation-light); }
+.activity-page-hero.act-fitness     { border-left-color: var(--act-fitness);     background: var(--act-fitness-light); }
+.activity-page-hero.act-musculation { border-left-color: var(--act-musculation); background: var(--act-musculation-light); }
+.activity-page-hero.act-multisport  { border-left-color: var(--act-multisport);  background: var(--act-multisport-light); }
+.activity-page-hero h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.activity-page-hero p { margin: 4px 0 0; color: var(--color-text-light); }
+
+.activity-practice {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+.practice-item {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+}
+.practice-item .practice-icon { font-size: 1.6rem; margin-bottom: 6px; }
+.practice-item h4 { font-size: 0.95rem; color: var(--color-secondary); margin-bottom: 4px; }
+.practice-item p { font-size: 0.88rem; color: var(--color-text-light); margin: 0; }
+
+.benefits-list {
+  list-style: none;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 10px;
+}
+.benefits-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+}
+.benefits-list li::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  border-top: 4px solid var(--color-primary);
+}
+.testimonial-card .quote { font-size: 1.5rem; color: var(--color-primary); line-height: 1; }
+.testimonial-card p { color: var(--color-text); font-size: 0.95rem; font-style: italic; margin: 10px 0 14px; }
+.testimonial-card .author { font-weight: 700; color: var(--color-secondary); font-size: 0.9rem; }
+.testimonial-card .role { font-size: 0.82rem; color: var(--color-text-light); }
+.testimonial-placeholder {
+  background: repeating-linear-gradient(45deg, #FAFAF7, #FAFAF7 10px, #F4F1EC 10px, #F4F1EC 20px);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 24px;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+}
+.testimonial-placeholder strong { color: var(--color-secondary); }
+
+.activities-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.activities-overview-grid .activity-card-body .btn {
+  margin-top: 4px;
+}
+
+/* ============================================
    V1.1 — Actualités (rubrique, PAS un blog)
    ============================================ */
 .news-list {
-  max-width: 860px;
+  max-width: 980px; /* V1.2 — zone de texte élargie (remarque François) */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -876,6 +993,18 @@ h3 { font-size: 1.4rem; }
   align-items: center;
   position: relative;
 }
+/* V1.2 — sur desktop le sélecteur de langue sort du flux des liens du menu :
+   positionné à droite du header, plus aucun chevauchement avec les titres */
+@media (min-width: 769px) {
+  .translate-box {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+    z-index: 6;
+  }
+}
 /* Select natif de langue — pilule assortie au header (blanc / bleu marine) */
 .translate-box select.lang-select {
   padding: 7px 14px;
@@ -928,7 +1057,7 @@ body { top: 0 !important; }
     margin-left: auto;
     margin-right: 8px;
   }
-  .translate-box select.lang-select { max-width: 120px; }
+  .translate-box select.lang-select { max-width: 118px; padding-left: 10px; padding-right: 24px; font-size: 0.78rem; }
   .nav-menu {
     display: none;
     position: absolute;

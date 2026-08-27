@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ---- Contact form — envoi via FormSubmit (service gratuit, sans backend) ----
+  // V1.2 : captcha activé (_captcha: 'true') — contrôle « je ne suis pas un robot »
   // Le premier envoi déclenche un email d'activation chez FormSubmit
   // (adresse cible : capaaasqy@hotmail.fr) à confirmer une seule fois.
   const contactForm = document.querySelector('.contact-form form');
@@ -152,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         message: form.querySelector('#message').value.trim(),
         _subject: '[Site CAPSAAA] Message de ' + form.querySelector('#nom').value.trim() + ' ' + form.querySelector('#prenom').value.trim(),
         _template: 'table',
-        _captcha: 'false'
+        _captcha: 'true'
       };
 
       // Validation rapide
