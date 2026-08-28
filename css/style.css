@@ -398,9 +398,9 @@ h3 { font-size: 1.4rem; }
   gap: 50px;
   align-items: start;
 }
-.about-text p {
+.content-page .about-text p {
   margin-bottom: 16px;
-  color: var(--color-text-light);
+  color: var(--color-text); /* noir — lisibilité renforcée (27/08) */
 }
 .about-values {
   display: grid;
