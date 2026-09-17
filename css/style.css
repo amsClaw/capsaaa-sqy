@@ -334,6 +334,10 @@ h3 { font-size: 1.4rem; }
   box-shadow: var(--shadow);
   border: 2px solid var(--color-border);
   transition: all var(--transition);
+  /* V1.3 — la carte est une colonne flex : le bloc coloré remplit toute la
+     hauteur (corrige la bande blanche en bas des cartes courtes, PC) */
+  display: flex;
+  flex-direction: column;
 }
 .activity-card:hover {
   transform: translateY(-4px);
@@ -342,6 +346,7 @@ h3 { font-size: 1.4rem; }
 .activity-card-img {
   height: 200px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .activity-card-img img {
   width: 100%;
@@ -354,6 +359,7 @@ h3 { font-size: 1.4rem; }
 }
 .activity-card-body {
   padding: 20px;
+  flex: 1; /* V1.3 — remplit la hauteur restante de la carte */
 }
 .activity-card-body h3 {
   color: var(--color-secondary);
