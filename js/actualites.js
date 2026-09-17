@@ -23,20 +23,10 @@ const ACTUALITES = [
     lien: "inscriptions.html",
     lienTexte: "Voir les inscriptions"
   },
-  {
-    date: "28 juillet 2026",
-    titre: "Une belle journée à la base de loisirs de Saint-Quentin",
-    corps: "Notre sortie annuelle à la base de loisirs de Saint-Quentin-en-Yvelines a rassemblé une trentaine d'adhérents et de bénévoles pour un pique-nique convivial et des jeux au bord de l'eau. Merci à tous les participants et aux organisateurs !",
-    photo: "photos/photo-2023-06-26-23-16-59.jpg",
-    lien: "galerie.html",
-    lienTexte: "Voir les photos de la sortie"
-  },
-  {
-    date: "3 juillet 2026",
-    titre: "CAPSAAA au forum des associations",
-    corps: "Retrouvez-nous en septembre au forum des associations pour découvrir nos activités et échanger avec nos bénévoles. C'est aussi l'occasion de rencontrer nos éducateurs sportifs et de poser toutes vos questions sur le sport adapté à Saint-Quentin-en-Yvelines.",
-    lien: "https://www.sqy.fr",
-    lienExterne: true,
-    lienTexte: "Site de Saint-Quentin-en-Yvelines"
-  }
 ];
+
+/*
+  Actualités supprimées le 17/09/2026 à la demande du client (docx V2) :
+  - « Une belle journée à la base de loisirs de Saint-Quentin » (28/07/2026)
+  - « CAPSAAA au forum des associations » (03/07/2026)
+*/
