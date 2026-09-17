@@ -36,8 +36,45 @@ Vérifié : 8 contrôles grep + test navigateur local (onglets galerie, textes, 
   publique. → à confirmer lors du RV téléphonique.
 - Emoji 🥇 : interprété comme « remplacer le 🎯 de la Boccia par 🥇 ».
 
+## 🔴 2ᵉ passe — textes surlignés en ROUGE par François (17/09, après-midi)
+
+Extraction automatique des **43 passages rouges** du docx (script : lecture des runs
+`w:color` rouges avec contexte tableau).
+
+| # | Modification (texte rouge du client) | Fichier(s) |
+|---|---|---|
+| 12 | Aquatique — Public : ajout « **après validation par les maîtres-nageurs lors de la séance d'essai** » | `pages/activite-aquatique.html` |
+| 13 | Musculation — bénéfice : « Gagner en force, **équilibre,** endurance et tonicité » | `pages/activite-musculation.html` |
+| 14 | Valeur **Bien-être** (version complète) : « … par le sport : se dépasser, se sentir mieux dans son corps et dans sa tête » | `pages/qui-sommes-nous.html` |
+| 15 | Valeur **Convivialité** : « Un cadre chaleureux **pour créer des liens** : sorties, repas et moments de partage… » | `pages/qui-sommes-nous.html`, `index.html` |
+| 16 | Sensibilisations : « par 1/2 journée **ou journée** complète » | `pages/sensibilisations.html` |
+
+Déjà conformes (vérifiés vs docx) : équitation (paragraphe 🐴 + 2 bénéfices),
+musculation « …de chacun : on progresse à son rythme », fitness (virgule step,
+indication médicale, sédentarité), multi-sports (basket fauteuil, solo), torball,
+âges 5 ans, boccia 🥇.
+
+## ❓ Reste ambigu / à confirmer
+
+- **Changement de lieu « Gymnase Broustal – Trappes »** : les annotations Broustal
+  encadrent les remarques Fitness (virgule step, indication médicale, sédentarité), mais
+  la fiche Fitness du docx affiche « Gymnase Aviation — Guyancourt ». **Non appliqué** →
+  demander à François quelle activité et quel gymnase (+ le plan).
+- **Horaires** : seul celui de l'aquatique est fourni (« samedi 10H45 à 12H »). Les
+  mentions rouges « Mettre horaire / Mettre les horaires » concernent l'équitation, la
+  musculation, le multi-sports et les sorties → valeurs manquantes.
+- **Tarifs** : « Demander les tarifs = **Télécharger les tarifs** » + « Permet de
+  télécharger » → nécessite le PDF des tarifs (absent de `assets/docs/`).
+- **Phrase musculation** : deux variantes rouges (« de chacun : on progresse à son
+  rythme » vs « de chaque participant qui progresse à son rythme ») — cosmétique.
+
+## 📸 Photos à remplacer (client)
+
+Accueil · aquatique (celle du milieu) · musculation · 3ᵉ photo multi-sports · dernière
+actualité · (« photo à changer : sera communiquée ultérieurement »).
+
 ## 🔧 Point technique
 
-`git` et `python3` système sont bloqués sur le Mac : licence Xcode non acceptée
-(« sudo xcodebuild -license accept »). Les modifications sont bien sur le disque,
-mais **non commitées** tant que ce n'est pas réglé.
+Résolu le 17/09 : licence Xcode acceptée par Ams → `git` et `python3` système
+fonctionnent. Toutes les modifications sont **commitées et poussées** sur
+`github.com/amsClaw/capsaaa-sqy` (branche `master`).
