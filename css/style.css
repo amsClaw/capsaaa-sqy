@@ -363,13 +363,17 @@ h3 { font-size: 1.4rem; }
 }
 
 /* ---- Vidéo (format portrait / téléphone) ---- */
-.video-block {
+/* Mobile d'abord : vidéo centrée au-dessus du texte.
+   Sur grand écran (≥ 900 px) : deux colonnes — vidéo à gauche, texte à droite,
+   pour éviter une grande zone vide au milieu d'une page large. */
+.video-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0 40px;
+  gap: 24px;
+  margin: 10px 0 45px;
 }
-.video-block video.video-portrait {
+.video-section .video-portrait {
   width: 100%;
   max-width: 340px;
   height: auto;
@@ -378,13 +382,34 @@ h3 { font-size: 1.4rem; }
   background: #000;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
-.video-legende {
-  margin-top: 14px;
-  max-width: 430px;
-  text-align: center;
-  color: var(--color-text-light);
-  font-size: 0.9rem;
+.video-texte {
+  max-width: 470px;
+}
+.video-texte h2 {
+  margin-top: 0;
+}
+.video-texte blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: 14px;
+  margin: 16px 0;
   font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+}
+.video-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+@media (min-width: 900px) {
+  .video-section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+  }
+  .video-texte {
+    max-width: 420px;
+  }
 }
 .activity-card-body h3 {
   color: var(--color-secondary);
