@@ -361,6 +361,31 @@ h3 { font-size: 1.4rem; }
   padding: 20px;
   flex: 1; /* V1.3 — remplit la hauteur restante de la carte */
 }
+
+/* ---- Vidéo (format portrait / téléphone) ---- */
+.video-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 40px;
+}
+.video-block video.video-portrait {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  background: #000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+.video-legende {
+  margin-top: 14px;
+  max-width: 430px;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
 .activity-card-body h3 {
   color: var(--color-secondary);
   margin-bottom: 8px;
