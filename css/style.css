@@ -357,6 +357,25 @@ h3 { font-size: 1.4rem; }
 .activity-card:hover .activity-card-img img {
   transform: scale(1.05);
 }
+
+/* Accueil (retour client 05/10) : cartes réduites à la photo, au nom et au bouton */
+.activities-grid--compact {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px) {
+  .activities-grid--compact { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .activities-grid--compact { grid-template-columns: 1fr; }
+}
+.activities-grid--compact .activity-card-img { height: 180px; }
+.activities-grid--compact .activity-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.activities-grid--compact .activity-card-body h3 { margin-bottom: 0; }
 .activity-card-body {
   padding: 20px;
   flex: 1; /* V1.3 — remplit la hauteur restante de la carte */
