@@ -23,7 +23,7 @@
 1. Il faut un **compte Google** (Gmail) pour continuer.
    - Si l'association en a déjà un → utilisez-le.
    - Sinon, créez-en un ici : https://accounts.google.com/signup
-   - ⚠️ **Conseil** : utilisez l'adresse de l'association (capaaasqy@hotmail.fr) ou créez une adresse dédiée comme `capsaaa.site@gmail.com`. Cela évitera que le suivi dépende d'une personne en particulier.
+   - ⚠️ **Conseil** : utilisez l'adresse de l'association (capsaaasqy@hotmail.fr) ou créez une adresse dédiée comme `capsaaa.site@gmail.com`. Cela évitera que le suivi dépende d'une personne en particulier.
 
 ---
 

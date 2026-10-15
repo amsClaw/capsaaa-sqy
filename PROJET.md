@@ -27,7 +27,7 @@
 
 - **Adresse** : 14 rue Mansart, 78190 Trappes
 - **Téléphone** : 06 03 41 45 30
-- **Email** : capaaasqy@hotmail.fr (attention : 3x "a" dans capaaa)
+- **Email** : capsaaasqy@hotmail.fr (attention : 3x "a" dans capaaa)
 - **Site actuel** : https://www.cap-saaa-sqy.fr/
 - **Agrément** : Direction Départementale Jeunesse et Sports
 - **Affiliation** : Fédération Française des Sports pour Tous

@@ -192,7 +192,7 @@ Contact
 - **Création** : 1992
 - **Siège social** : 14 rue Mansart, 78190 Trappes
 - **Téléphone** : 06 03 41 45 30
-- **Email** : capaaasqy@hotmail.fr (3 x "a" dans capaaa — attention !)
+- **Email** : capsaaasqy@hotmail.fr (3 x "a" dans capaaa — attention !)
 - **Site** : www.capsaaa-sqy.fr (1 seul "a" dans le site)
 - **Agrément** : Direction Départementale Jeunesse et Sports
 - **Affiliation** : Fédération Française des Sports pour Tous
@@ -239,7 +239,7 @@ Les photos sont chargées depuis `https://www.cap-saaa-sqy.fr/medias/album/...` 
 5. **Compteurs animés** — Les chiffres (1992, 120+...) s'animent au scroll (Intersection Observer)
 6. **Formulaire de contact** — Envoi réel via **FormSubmit** (service gratuit, sans backend)
    - Champs validés par l'association : nom, prénom, téléphone, email, ville, message
-   - ⚠️ **Premier envoi** : FormSubmit envoie un email d'activation à capaaasqy@hotmail.fr — il faut cliquer le lien une fois pour activer la réception (fait une seule fois, au premier test réel)
+   - ⚠️ **Premier envoi** : FormSubmit envoie un email d'activation à capsaaasqy@hotmail.fr — il faut cliquer le lien une fois pour activer la réception (fait une seule fois, au premier test réel)
 7. **Actualités** — Rendu depuis `js/actualites.js` (page complète + aperçu accueil, 2 dernières)
 
 ### `js/actualites.js` (mise à jour des news)
@@ -308,7 +308,7 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 ### Important pour le déploiement
 - Le site est 100% statique → pas de base de données, pas de backend
 - Le formulaire de contact fonctionne via **FormSubmit** (gratuit, sans backend)
-- **⚠️ Premier envoi** : FormSubmit envoie un email d'activation à capaaasqy@hotmail.fr — cliquer le lien une fois pour activer la réception
+- **⚠️ Premier envoi** : FormSubmit envoie un email d'activation à capsaaasqy@hotmail.fr — cliquer le lien une fois pour activer la réception
 - Toutes les photos sont en local (`assets/photos/`) → le site ne dépend plus de l'ancien site
 - Les chemins sont relatifs → le site fonctionne sous un sous-dossier (ex: GitHub Pages)
 
@@ -362,7 +362,7 @@ npx serve C:\Users\amsfo\Documents\Openclaw_folder\10_Projets\capsaaa
 **Coordonnées :**
 - **Adresse** : 14 rue Mansart, 78190 Trappes
 - **Téléphone** : 06 03 41 45 30
-- **Email** : capaaasqy@hotmail.fr
+- **Email** : capsaaasqy@hotmail.fr
 - **Site actuel** : https://www.cap-saaa-sqy.fr/
 
 ---

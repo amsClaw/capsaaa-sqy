@@ -57,7 +57,7 @@ Contact
 ├── Formulaire
 ├── Infos (adresse 14 rue Mansart, 78190 Trappes)
 ├── Tél : 06 03 41 45 30
-└── Email : capaaasqy@hotmail.fr
+└── Email : capsaaasqy@hotmail.fr
 
 Partenaires & Liens utiles
 ├── Partenaires financiers
